@@ -6,11 +6,12 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.player.PlayerLoginEvent;  
 
 
-public class Refractor extends JavaPlugin implements Listener {
+public class Refractor extends JavaPlugin {
     @Override
     public void onEnable() {
         getLogger().info("Refractor 1.1 Is Loaded");
-        getServer().getPluginManager().registerEvents(new ListenerClass(), this);
+        getServer().getPluginManager().registerEvents(new Refractor(), this);
+        
       
     
 
@@ -29,3 +30,6 @@ public class Refractor extends JavaPlugin implements Listener {
 
 }
 
+public class Refractor implements Listener {
+
+}
