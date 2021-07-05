@@ -6,7 +6,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.player.PlayerLoginEvent;  
 
 
-public class Refractor extends JavaPlugin {
+public class Refractor extends JavaPlugin implements Listener {
     @Override
     public void onEnable() {
         getLogger().info("Refractor 1.1 Is Loaded");
@@ -21,15 +21,11 @@ public class Refractor extends JavaPlugin {
         getLogger().info("Refractor 1.1 is Unloaded");
     }
 
-    
 
-    
-
-}
-
-public class Refractor implements Listener {
     @EventHandler
     public void onPlayerLogin(PlayerLoginEvent event) {
         event.getPlayer().sendMessage("Welcome to the server!");
     }
+
 }
+
