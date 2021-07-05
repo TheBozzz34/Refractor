@@ -26,7 +26,7 @@ public class Refractor extends JavaPlugin {
 }
 
 
-public class ListenerClass implements Listener {
+public class Refractor implements Listener {
     @EventHandler
     public void onPlayerLogin(PlayerLoginEvent event) {
         event.getPlayer().sendMessage("Welcome to the server!");
