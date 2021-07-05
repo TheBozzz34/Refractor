@@ -23,13 +23,6 @@ public class Refractor extends JavaPlugin {
     }
 
 
-    @EventHandler
-    public void onPlayerLogin(PlayerLoginEvent event) {
-        event.getPlayer().sendMessage("Welcome to the server!");
-    }
 
 }
 
-public class MyListener implements Listener {
-
-}
