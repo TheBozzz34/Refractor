@@ -10,7 +10,7 @@ public class Refractor extends JavaPlugin {
     @Override
     public void onEnable() {
         getLogger().info("Refractor 1.1 Is Loaded");
-        getServer().getPluginManager().registerEvents(new Refractor(), this);
+        getServer().getPluginManager().registerEvents(new MyListener(), this);
         
       
     
@@ -30,6 +30,6 @@ public class Refractor extends JavaPlugin {
 
 }
 
-public class Refractor implements Listener {
+public class MyListener implements Listener {
 
 }
