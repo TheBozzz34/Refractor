@@ -6,12 +6,12 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class Refractor extends JavaPlugin {
     @Override
     public void onEnable() {
-        getLogger().info("onEnable is called!");
+        getLogger().info("Refractor 1.1 Is Loaded");
      
     }
     @Override
     public void onDisable() {
-        getLogger().info("onDisable is called!");
+        getLogger().info("Refractor 1.1 is Unloaded");
     }
 
 
