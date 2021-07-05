@@ -1,4 +1,5 @@
 name: Refractor
-version: 1.1
+version: 1.2
 main: company.fourleafclover.Refractor.Refractor
 author: 我爱中共的政府#5275
+commands:
