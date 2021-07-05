@@ -3,7 +3,7 @@ language: java
 deploy:
   provider: releases
   api_key: "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"
-  file: "*.jar"
+  file: "Refractor 1.0-SNAPSHOT.jar"
   skip_cleanup: true
   on:
     tags: false
