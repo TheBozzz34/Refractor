@@ -21,14 +21,13 @@ public class Refractor extends JavaPlugin {
         getLogger().info("Refractor 1.1 is Unloaded");
     }
 
+    @EventHandler
+    public void onPlayerLogin(PlayerLoginEvent event) {
+        event.getPlayer().sendMessage("Welcome to the server!");
+    }
+
     
 
 }
 
 
-public class Refractor implements Listener {
-    @EventHandler
-    public void onPlayerLogin(PlayerLoginEvent event) {
-        event.getPlayer().sendMessage("Welcome to the server!");
-    }
-}
