@@ -1,3 +1,6 @@
+package company.fourleafclover.Refractor;
+import org.bukkit.Material;
+
 public class CommandKit implements CommandExecutor {
 
     // This method is called, when somebody uses our command
