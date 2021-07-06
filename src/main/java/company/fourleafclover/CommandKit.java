@@ -1,7 +1,10 @@
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.entity.Player;
-import company.fourleafclover.Refractor.CommandExecutor;
+import org.bukkit.command;
+import org.bukkit.CommandSender;
+import org.bukkit.CommandExecutor;
+
 
 public class CommandKit implements CommandExecutor {
 
