@@ -1,5 +1,7 @@
 package company.fourleafclover.Refractor;
 import org.bukkit.Material;
+import org.bukkit.ItemStack;
+import org.bukkit.Player;
 
 public class CommandKit implements CommandExecutor {
 
