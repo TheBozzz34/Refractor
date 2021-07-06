@@ -4,7 +4,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.event.Listener;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.player.PlayerLoginEvent;  
-import io.sentry.Sentry;
+import io.sentry.*;
 import java.lang.Exception;
 
 
@@ -21,11 +21,7 @@ public class Refractor extends JavaPlugin {
             // When first trying Sentry it's good to see what the SDK is doing:
             options.setDebug(true);
           });
-          try {
-            throw new Exception("This is a test.");
-          } catch (Exception e) {
-            Sentry.captureException(e);
-          }
+          
         
        
         
