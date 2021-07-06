@@ -2,14 +2,18 @@ import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.entity.Player;
 import org.bukkit.command;
-import org.bukkit.command.CommandSender;
-import org.bukkit.command.CommandExecutor;
+
 
 
 public class CommandKit implements CommandExecutor {
 
     // This method is called, when somebody uses our command
     @Override
+    public void onEnable() {
+        this.getCommand("kit").setExecutor(new CommandKit());
+
+    }
+
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if (sender instanceof Player) {
             Player player = (Player) sender;

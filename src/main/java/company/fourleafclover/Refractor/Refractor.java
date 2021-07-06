@@ -10,7 +10,7 @@ public class Refractor extends JavaPlugin {
     @Override
     public void onEnable() {
         getLogger().info("Refractor 1.3 Is Loaded");
-        this.getCommand("kit").setExecutor(new CommandKit());
+        
        
         
       
