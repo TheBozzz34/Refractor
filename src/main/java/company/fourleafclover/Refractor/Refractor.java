@@ -9,7 +9,7 @@ import org.bukkit.event.player.PlayerLoginEvent;
 public class Refractor extends JavaPlugin {
     @Override
     public void onEnable() {
-        getLogger().info("Refractor 1.1 Is Loaded");
+        getLogger().info("Refractor 1.3 Is Loaded");
         this.getCommand("kit").setExecutor(new CommandKit());
        
         
@@ -20,7 +20,7 @@ public class Refractor extends JavaPlugin {
     }
     @Override
     public void onDisable() {
-        getLogger().info("Refractor 1.1 is Unloaded");
+        getLogger().info("Refractor 1.3 is Unloaded");
     }
 
 
