@@ -2,8 +2,8 @@ import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.entity.Player;
 import org.bukkit.command;
-import org.bukkit.CommandSender;
-import org.bukkit.CommandExecutor;
+import org.bukkit.command.CommandSender;
+import org.bukkit.command.CommandExecutor;
 
 
 public class CommandKit implements CommandExecutor {
