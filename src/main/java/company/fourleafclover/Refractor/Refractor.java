@@ -5,7 +5,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.player.PlayerLoginEvent;  
 
-import company.fourleafclover.Refractor.Metrics;
+import company.fourleafclover.Metrics;
 
 
 
