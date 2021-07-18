@@ -1,17 +1,8 @@
 digraph "company.fourleafclover:Refractor:jar:1.4-SNAPSHOT" { 
 	"company.fourleafclover:Refractor:jar:1.4-SNAPSHOT" -> "org.spigotmc:spigot-api:jar:1.17-R0.1-SNAPSHOT:provided" ; 
-	"company.fourleafclover:Refractor:jar:1.4-SNAPSHOT" -> "io.sentry:sentry:jar:5.0.1:compile" ; 
 	"org.spigotmc:spigot-api:jar:1.17-R0.1-SNAPSHOT:provided" -> "commons-lang:commons-lang:jar:2.6:provided" ; 
 	"org.spigotmc:spigot-api:jar:1.17-R0.1-SNAPSHOT:provided" -> "com.google.guava:guava:jar:21.0:provided" ; 
-	"org.spigotmc:spigot-api:jar:1.17-R0.1-SNAPSHOT:provided" -> "com.google.code.gson:gson:jar:2.8.0:runtime" ; 
-	"org.spigotmc:spigot-api:jar:1.17-R0.1-SNAPSHOT:provided" -> "net.md-5:bungeecord-chat:jar:1.16-R0.4:provided" ; 
-	"org.spigotmc:spigot-api:jar:1.17-R0.1-SNAPSHOT:provided" -> "org.yaml:snakeyaml:jar:1.28:provided" ; 
- } digraph "company.fourleafclover:Refractor:jar:1.4-SNAPSHOT" { 
-	"company.fourleafclover:Refractor:jar:1.4-SNAPSHOT" -> "org.spigotmc:spigot-api:jar:1.17-R0.1-SNAPSHOT:provided" ; 
-	"company.fourleafclover:Refractor:jar:1.4-SNAPSHOT" -> "io.sentry:sentry:jar:5.0.1:compile" ; 
-	"org.spigotmc:spigot-api:jar:1.17-R0.1-SNAPSHOT:provided" -> "commons-lang:commons-lang:jar:2.6:provided" ; 
-	"org.spigotmc:spigot-api:jar:1.17-R0.1-SNAPSHOT:provided" -> "com.google.guava:guava:jar:21.0:provided" ; 
-	"org.spigotmc:spigot-api:jar:1.17-R0.1-SNAPSHOT:provided" -> "com.google.code.gson:gson:jar:2.8.0:runtime" ; 
+	"org.spigotmc:spigot-api:jar:1.17-R0.1-SNAPSHOT:provided" -> "com.google.code.gson:gson:jar:2.8.0:provided" ; 
 	"org.spigotmc:spigot-api:jar:1.17-R0.1-SNAPSHOT:provided" -> "net.md-5:bungeecord-chat:jar:1.16-R0.4:provided" ; 
 	"org.spigotmc:spigot-api:jar:1.17-R0.1-SNAPSHOT:provided" -> "org.yaml:snakeyaml:jar:1.28:provided" ; 
  } 
