@@ -12,14 +12,12 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
    </properties>
-
     <repositories>
         <repository>
             <id>spigot-repo</id>
             <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
         </repository>
     </repositories>
-
     <dependencies>
         <dependency>
             <groupId>org.spigotmc</groupId>
@@ -41,6 +39,4 @@
             <url>https://refractor.jfrog.io/artifactory/default-maven-virtual</url>
         </snapshotRepository>
     </distributionManagement>
-
-
 </project>
