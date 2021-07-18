@@ -13,8 +13,8 @@ public class Refractor extends JavaPlugin {
     @Override
     public void onEnable() {
         getLogger().info("Refractor 1.4 Is Loaded");
-        int pluginId = 11941; // <-- Replace with the id of your plugin!
-        Metrics metrics = new Metrics(this, pluginId);
+       // int pluginId = 11941; // <-- Replace with the id of your plugin!
+      //  Metrics metrics = new Metrics(this, pluginId);
         
           
         
