@@ -28,7 +28,7 @@ jobs:
           name: Uploading Artifacts
           command: |
             mkdir /tmp/artifact;
-            mv Refractor-1.4-SNAPSHOT.jar /tmp/artifact;
+            mv /tmp/Refractor-1.4-SNAPSHOT.jar /tmp/artifact;
       - store_artifacts:
           path: /tmp/artifact
        
