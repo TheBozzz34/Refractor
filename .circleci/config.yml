@@ -12,6 +12,7 @@ jobs:
     docker:
       - image: cimg/openjdk:11.0
     steps:
+      working_directory: /tmp
       # Checkout the code as the first step.
       - checkout
       # Use mvn clean and package as the standard maven build phase
@@ -22,21 +23,21 @@ jobs:
       - run:
           name: Test
           command: mvn test
+  build:
+    working_directory: /tmp
+    steps:
+      - run:
+          name: Creating Dummy Artifacts
+          command: |
+            echo "*.jar" > /tmp/art-1;
+            mkdir /tmp/artifacts;
+            echo "my artifact files in a dir" > /tmp/artifacts/art-2;
+      - store_artifacts:
+          path: /tmp/art-1
+          destination: artifact-file
+      - store_artifacts:
+          path: /tmp/artifacts
 
-build:
-  working_directory: /tmp
-  steps:
-    - run:
-        name: Creating Dummy Artifacts
-        command: |
-          echo "*.java" > /tmp/art-1;
-          mkdir /tmp/artifacts;
-          echo "my artifact files in a dir" > /tmp/artifacts/art-2;
-    - store_artifacts:
-        path: /tmp/art-1
-        destination: artifact-file
-    - store_artifacts:
-        path: /tmp/artifacts
 
 workflows:
   # Below is the definition of your workflow.
@@ -46,3 +47,4 @@ workflows:
   sample: 
     jobs:
       - build-and-test
+      - build
