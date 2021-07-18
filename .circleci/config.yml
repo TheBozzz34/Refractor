@@ -23,9 +23,7 @@ jobs:
       - run:
           name: Test
           command: mvn test
-  build:
-    working_directory: /tmp
-    steps:
+
       - run:
           name: Creating Dummy Artifacts
           command: |
@@ -39,6 +37,7 @@ jobs:
           path: /tmp/artifacts
 
 
+
 workflows:
   # Below is the definition of your workflow.
   # Inside the workflow, you provide the jobs you want to run, e.g this workflow runs the build-and-test job above.
@@ -47,4 +46,4 @@ workflows:
   sample: 
     jobs:
       - build-and-test
-      - build
+      
