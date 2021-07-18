@@ -27,7 +27,7 @@ jobs:
       - run:
           name: Uploading Artifacts
           command: |
-            echo Refractor-1.4-SNAPSHOT.jar > /tmp/artifact-1;
+            echo Refractor-1.4-SNAPSHOT.jar > /tmp/artifact;
             mkdir /tmp/artifacts;
       - store_artifacts:
           path: /tmp/artifact
