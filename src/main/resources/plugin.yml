@@ -4,4 +4,8 @@ main: company.fourleafclover.Refractor.Refractor
 author: 我爱中共的政府#5275
 api-version: 1.17
 commands:
+  error:
+    description: Manually creates an execption
+    usage: /error
+    permission: refractor.createrror
    
