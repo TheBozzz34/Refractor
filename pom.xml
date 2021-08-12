@@ -6,7 +6,7 @@
 
     <groupId>company.fourleafclover</groupId>
     <artifactId>Refractor</artifactId>
-    <version>1.5.7-SNAPSHOT</version>
+    <version>1.5.8-SNAPSHOT</version>
 
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
@@ -61,6 +61,20 @@
             <artifactId>JDA</artifactId>
             <version>4.3.0_277</version>
         </dependency>
+        <!--JavaCord-->
+        <dependency>
+            <groupId>org.javacord</groupId>
+            <artifactId>javacord</artifactId>
+            <version>3.3.2</version>
+            <type>pom</type>
+        </dependency>
+        <!--Dotenv-->
+        <dependency>
+            <groupId>io.github.cdimascio</groupId>
+            <artifactId>java-dotenv</artifactId>
+            <version>5.2.2</version>
+        </dependency>
+
     </dependencies>
 
     <build>

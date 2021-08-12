@@ -1,7 +1,6 @@
 package company.fourleafclover.Refractor;
 
-import net.dv8tion.jda.api.audit.AuditLogEntry;
-import net.dv8tion.jda.api.entities.TextChannel;
+
 import org.bstats.bukkit.Metrics;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -43,7 +42,7 @@ public class Refractor extends JavaPlugin {
         }
         FileConfiguration config = this.getConfig();
         config.addDefault("bstats", true);
-        config.addDefault("version", "1.5.7");
+        config.addDefault("version", "1.5.8");
         config.options().copyDefaults(true);
         saveConfig();
         String version = getConfig().getString("version");
@@ -86,4 +85,5 @@ public class Refractor extends JavaPlugin {
 
 
 }
+
 
