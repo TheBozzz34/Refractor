@@ -11,7 +11,7 @@ commands:
   dsc:
     description: Send the link to our discord!
     usage: /<command>
-    aliases: dsc
+    aliases:
 
 
 
