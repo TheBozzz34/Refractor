@@ -14,14 +14,17 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 
+
 public class Refractor extends JavaPlugin {
     @Override
     public void onEnable() {
         this.saveDefaultConfig();
         FileConfiguration config = this.getConfig();
         config.addDefault("bstats", true);
+        config.addDefault("version", "1.5.3");
         config.options().copyDefaults(true);
         saveConfig();
+        String version = getConfig().getString("version");
         Logger logger = LoggerFactory.getLogger(Refractor.class);
         if (config.getBoolean("bstats")) {
             int pluginId = 12406; // <-- Replace with the id of your plugin!
@@ -41,14 +44,17 @@ public class Refractor extends JavaPlugin {
             options.setDebug(true);
         });
 
-        getLogger().info(ChatColor.GREEN + "Refractor 1.5.3 Is Loaded");
+        getLogger().info(ChatColor.GREEN + "Refractor" + version + "Loaded");
         logger.info("Hello World");
+
+
 
 
     }
     @Override
     public void onDisable() {
-        getLogger().info(ChatColor.RED + "Refractor 1.5.3 is Unloaded");
+        String version = getConfig().getString("version");
+        getLogger().info(ChatColor.RED + "Refractor"  + version +  "is Unloaded");
     }
 
 
