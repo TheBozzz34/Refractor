@@ -1,11 +1,16 @@
 package company.fourleafclover.Refractor;
 
+import net.dv8tion.jda.api.audit.AuditLogEntry;
+import net.dv8tion.jda.api.entities.TextChannel;
 import org.bstats.bukkit.Metrics;
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 import io.sentry.Sentry;
 
@@ -14,6 +19,7 @@ import java.lang.Exception;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 
 
 
@@ -39,7 +45,7 @@ public class Refractor extends JavaPlugin {
         }
         FileConfiguration config = this.getConfig();
         config.addDefault("bstats", true);
-        config.addDefault("version", "1.5.5");
+        config.addDefault("version", "1.5.6");
         config.options().copyDefaults(true);
         saveConfig();
         String version = getConfig().getString("version");
@@ -68,6 +74,8 @@ public class Refractor extends JavaPlugin {
 
 
 
+
+
     }
     @Override
     public void onDisable() {
@@ -75,6 +83,10 @@ public class Refractor extends JavaPlugin {
         getLogger().info(ChatColor.RED + "Refractor "  + version +  " is Unloaded");
     }
 
+    @EventHandler
+    public void onJoin(PlayerJoinEvent e) {
+        e.setJoinMessage("Welcome, " + e.getPlayer().getDisplayName() + ", have a great time!");
+    }
 
 
 
