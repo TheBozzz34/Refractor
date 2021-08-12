@@ -8,7 +8,7 @@ commands:
     description: Generate a man-made execption
     usage: /<command>
     aliases:
-  community:
+  dsc:
     description: Send the link to our discord!
     usage: /<command>
     aliases: dsc

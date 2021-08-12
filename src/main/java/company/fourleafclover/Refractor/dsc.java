@@ -7,14 +7,14 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-public class community implements CommandExecutor {
+public class dsc implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if (!(sender instanceof Player)) { return true; }
         Player player = (Player) sender;
 
         //generate execution
-        if(cmd.getName().equalsIgnoreCase("community")) {
+        if(cmd.getName().equalsIgnoreCase("dsc")) {
             sender.sendMessage("Join our community at: dsc.gg/t0ast!");
         }
 
