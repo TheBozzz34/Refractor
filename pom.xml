@@ -6,7 +6,7 @@
 
     <groupId>company.fourleafclover</groupId>
     <artifactId>Refractor</artifactId>
-    <version>1.5.8-SNAPSHOT</version>
+    <version>1.5.9-SNAPSHOT</version>
 
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
@@ -75,6 +75,12 @@
             <version>5.2.2</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>2.11.0</version>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -102,6 +108,7 @@
             </plugin>
         </plugins>
     </build>
+
 
 
 </project>

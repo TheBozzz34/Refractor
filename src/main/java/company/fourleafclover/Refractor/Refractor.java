@@ -42,7 +42,7 @@ public class Refractor extends JavaPlugin {
         }
         FileConfiguration config = this.getConfig();
         config.addDefault("bstats", true);
-        config.addDefault("version", "1.5.8");
+        config.addDefault("version", "1.5.9");
         config.options().copyDefaults(true);
         saveConfig();
         String version = getConfig().getString("version");

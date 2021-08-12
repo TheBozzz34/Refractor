@@ -1,5 +1,7 @@
 package company.fourleafclover.Refractor;
 
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.player.PlayerJoinEvent;
 import org.javacord.api.DiscordApi;
 import org.javacord.api.DiscordApiBuilder;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -9,7 +11,6 @@ import org.javacord.api.entity.channel.TextChannel;
 public class discord {
 
     public static void main(String[] args) {
-        // Insert your bot's token here
         Dotenv dotenv = Dotenv.load();
         String token = dotenv.get("TOKEN");
 
@@ -19,6 +20,10 @@ public class discord {
 
         // Print the invite url of your bot
         System.out.println("You can invite the bot by using the following url: " + api.createBotInvite());
+    }
+    @EventHandler
+    public void onJoin(PlayerJoinEvent e) {
+
     }
 
 }
