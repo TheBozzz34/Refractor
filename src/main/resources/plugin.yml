@@ -3,4 +3,11 @@ version: 1.5
 main: company.fourleafclover.Refractor.Refractor
 author: 我爱中共的政府#5275
 api-version: 1.17
+commands:
+  error:
+    description: Generate a man-made execption
+    usage: /error
+    aliases: error
+
+
 
