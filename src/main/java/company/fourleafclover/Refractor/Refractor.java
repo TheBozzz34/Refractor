@@ -8,6 +8,8 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 import io.sentry.Sentry;
+
+import java.io.File;
 import java.lang.Exception;
 
 import org.slf4j.Logger;
@@ -18,10 +20,24 @@ import org.slf4j.LoggerFactory;
 public class Refractor extends JavaPlugin {
     @Override
     public void onEnable() {
-        this.saveDefaultConfig();
+        try {
+            if (!getDataFolder().exists()) {
+                getDataFolder().mkdirs();
+            }
+            File file = new File(getDataFolder(), "config.yml");
+            if (!file.exists()) {
+                getLogger().info("Config.yml not found, creating!");
+                saveDefaultConfig();
+            } else {
+                getLogger().info("Config.yml found, loading!");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+
+        }
         FileConfiguration config = this.getConfig();
         config.addDefault("bstats", true);
-        config.addDefault("version", "1.5.4");
+        config.addDefault("version", "1.5.5");
         config.options().copyDefaults(true);
         saveConfig();
         String version = getConfig().getString("version");
