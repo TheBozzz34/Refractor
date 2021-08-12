@@ -1,10 +1,7 @@
 name: Refractor
-version: 1.4
+version: 1.5
 main: company.fourleafclover.Refractor.Refractor
 author: 我爱中共的政府#5275
 api-version: 1.17
 commands:
-   kit:
-      description: Kit command
-      usage: /kit
-      permission: refractor.usekit
+   
