@@ -30,7 +30,9 @@ public class Refractor extends JavaPlugin {
                 saveDefaultConfig();
             } else {
                 getLogger().info("Config.yml found, loading!");
+
             }
+
         } catch (Exception e) {
             e.printStackTrace();
 
