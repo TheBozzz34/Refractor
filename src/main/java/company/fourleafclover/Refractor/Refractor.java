@@ -13,7 +13,7 @@ import java.lang.Exception;
 public class Refractor extends JavaPlugin {
     @Override
     public void onEnable() {
-        getLogger().info(ChatColor.GREEN + "Refractor 1.5 Is Loaded");
+        getLogger().info(ChatColor.GREEN + "Refractor 1.5.1 Is Loaded");
         int pluginId = 12406; // <-- Replace with the id of your plugin!
         Metrics metrics = new Metrics(this, pluginId);
         commands commands = new commands();
@@ -31,7 +31,7 @@ public class Refractor extends JavaPlugin {
     }
     @Override
     public void onDisable() {
-        getLogger().info(ChatColor.RED + "Refractor 1.5 is Unloaded");
+        getLogger().info(ChatColor.RED + "Refractor 1.5.1 is Unloaded");
     }
 
 
