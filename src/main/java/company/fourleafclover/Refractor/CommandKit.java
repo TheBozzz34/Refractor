@@ -8,7 +8,7 @@ import org.bukkit.entity.Player;
 
 public class CommandKit implements CommandExecutor {
     @Override
-    public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
+    public boolean onCommand(CommandSender sender, Command error, String createrror, String[] args) {
         if (sender instanceof Player) {
             Player player = (Player) sender;
             try {
