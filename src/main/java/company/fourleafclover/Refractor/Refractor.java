@@ -21,7 +21,7 @@ public class Refractor extends JavaPlugin {
         this.saveDefaultConfig();
         FileConfiguration config = this.getConfig();
         config.addDefault("bstats", true);
-        config.addDefault("version", "1.5.3");
+        config.addDefault("version", "1.5.4");
         config.options().copyDefaults(true);
         saveConfig();
         String version = getConfig().getString("version");
@@ -44,7 +44,7 @@ public class Refractor extends JavaPlugin {
             options.setDebug(true);
         });
 
-        getLogger().info(ChatColor.GREEN + "Refractor" + version + "Loaded");
+        getLogger().info(ChatColor.GREEN + "Refractor " + version + " Loaded");
         logger.info("Hello World");
 
 
@@ -54,7 +54,7 @@ public class Refractor extends JavaPlugin {
     @Override
     public void onDisable() {
         String version = getConfig().getString("version");
-        getLogger().info(ChatColor.RED + "Refractor"  + version +  "is Unloaded");
+        getLogger().info(ChatColor.RED + "Refractor "  + version +  " is Unloaded");
     }
 
 
