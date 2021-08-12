@@ -16,7 +16,8 @@ public class Refractor extends JavaPlugin {
         getLogger().info(ChatColor.GREEN + "Refractor 1.5 Is Loaded");
         int pluginId = 12406; // <-- Replace with the id of your plugin!
         Metrics metrics = new Metrics(this, pluginId);
-        getCommand("error").setExecutor(new commands());
+        commands commands = new commands();
+        getCommand("error").setExecutor(commands);
         Sentry.init(options -> {
             options.setDsn("https://438653d78f4044eabce86bfac30ec13b@o561860.ingest.sentry.io/5904137");
             // Set traces_sample_rate to 1.0 to capture 100% of transactions for performance monitoring.
