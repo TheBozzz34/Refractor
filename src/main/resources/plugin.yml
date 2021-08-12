@@ -7,11 +7,10 @@ commands:
   generror:
     description: Generate a man-made execption
     usage: /<command>
-    aliases:
   dsc:
     description: Send the link to our discord!
     usage: /<command>
-    aliases:
+
 
 
 
