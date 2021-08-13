@@ -11,6 +11,8 @@
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
+        <spring.version>5.2.0.RELEASE</spring.version>
+        <email.version>1.16.18</email.version>
    </properties>
 
     <repositories>
@@ -54,7 +56,26 @@
             <artifactId>slf4j-api</artifactId>
             <version>1.7.9</version>
         </dependency>
+        <!--Javamail-->
+        <dependency>
+            <groupId>com.sun.mail</groupId>
+            <artifactId>javax.mail</artifactId>
+            <version>1.6.2</version>
+        </dependency>
+        <!--Spring-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-support</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <!--Dorkbox-->
+        <dependency>
+            <groupId>com.dorkbox</groupId>
+            <artifactId>Notify</artifactId>
+            <version>3.7</version>
+        </dependency>
     </dependencies>
+
 
     <build>
         <plugins>

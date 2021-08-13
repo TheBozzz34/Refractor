@@ -20,6 +20,10 @@ commands:
     description: Heals the player
     usage: /<command
     aliases: healme
+  notify:
+    description: Send a desktop toast
+    usage: /<command>
+
 
 
 
