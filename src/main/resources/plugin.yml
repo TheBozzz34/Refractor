@@ -23,6 +23,9 @@ commands:
   notify:
     description: Send a desktop toast
     usage: /<command>
+  day:
+    description: Set time to day
+    usage: /<command>
 
 
 
