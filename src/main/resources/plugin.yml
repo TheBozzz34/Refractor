@@ -1,15 +1,22 @@
 name: Refractor
-version: 1.7
+version: 1.7.1
 main: company.fourleafclover.Refractor.Refractor
 author: Keturah#5275
 api-version: 1.17
 commands:
   generror:
     description: Generate a man-made execption
-    usage: /<command>
+    usage: /generror
+    aliases: errorgenerate
   dsc:
     description: Send the link to our discord!
-    usage: /<command>
+    usage: /dsc
+    aliases: discord
+  feed:
+    description: Feeds the player
+    usage: /feed
+    aliases: feedme
+
 
 
 

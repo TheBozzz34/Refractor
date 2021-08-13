@@ -43,7 +43,7 @@ public class Refractor extends JavaPlugin {
         }
         FileConfiguration config = this.getConfig();
         config.addDefault("bstats", true);
-        config.addDefault("version", "1.7");
+        config.addDefault("version", "1.7.1");
         config.options().copyDefaults(true);
         saveConfig();
         String version = getConfig().getString("version");
@@ -58,6 +58,7 @@ public class Refractor extends JavaPlugin {
         commands commands = new commands();
         getCommand("generror").setExecutor(commands);
         getCommand("dsc").setExecutor(new dsc());
+        getCommand("dsc").setExecutor(new feed());
         Sentry.init(options -> {
             options.setDsn("https://438653d78f4044eabce86bfac30ec13b@o561860.ingest.sentry.io/5904137");
             // Set traces_sample_rate to 1.0 to capture 100% of transactions for performance monitoring.
