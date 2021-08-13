@@ -1,6 +1,6 @@
 package company.fourleafclover.Refractor;
 
-//imports
+
 import io.sentry.Sentry;
 import org.bstats.bukkit.Metrics;
 import org.bukkit.ChatColor;
