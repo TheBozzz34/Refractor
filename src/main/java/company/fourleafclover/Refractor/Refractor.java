@@ -6,6 +6,7 @@ import org.bstats.bukkit.Metrics;
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.slf4j.Logger;
@@ -37,10 +38,9 @@ public class Refractor extends JavaPlugin {
         }
         FileConfiguration config = this.getConfig();
         config.addDefault("bstats", true);
-        config.addDefault("version", "1.7.3");
         config.options().copyDefaults(true);
         saveConfig();
-        String version = getConfig().getString("version");
+        String version = ("1.7.4");
         Logger logger = LoggerFactory.getLogger(Refractor.class);
         if (config.getBoolean("bstats")) {
             int pluginId = 12406; // <-- Replace with the id of your plugin!
@@ -56,6 +56,11 @@ public class Refractor extends JavaPlugin {
         getCommand("heal").setExecutor(new heal());
         getCommand("notify").setExecutor(new notify());
         getCommand("day").setExecutor(new day());
+        getCommand("night").setExecutor(new night());
+        getCommand("gmc").setExecutor(new gmc());
+        getCommand("gms").setExecutor(new gms());
+        getCommand("gma").setExecutor(new gma());
+        getCommand("gmsp").setExecutor(new gmsp());
         Sentry.init(options -> {
             options.setDsn("https://438653d78f4044eabce86bfac30ec13b@o561860.ingest.sentry.io/5904137");
             // Set traces_sample_rate to 1.0 to capture 100% of transactions for performance monitoring.
@@ -65,7 +70,7 @@ public class Refractor extends JavaPlugin {
             options.setDebug(true);
         });
 
-        getLogger().info(ChatColor.GREEN + "Refractor " + version + " Loaded");
+        //getLogger().info(ChatColor.GREEN + "Refractor " + version + " Loaded");
         logger.info("Hello World");
 
 
@@ -73,7 +78,7 @@ public class Refractor extends JavaPlugin {
     @Override
     public void onDisable() {
         String version = getConfig().getString("version");
-        getLogger().info(ChatColor.RED + "Refractor "  + version +  " is Unloaded");
+        //getLogger().info(ChatColor.RED + "Refractor "  + version +  " is Unloaded");
     }
 
     @EventHandler
