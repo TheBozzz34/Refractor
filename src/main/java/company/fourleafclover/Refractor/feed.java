@@ -13,7 +13,7 @@ public class feed implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if (!(sender instanceof Player)) { return true; }
         Player player = (Player) sender;
-        Logger logger = LoggerFactory.getLogger(dsc.class);
+        Logger logger = LoggerFactory.getLogger(feed.class);
 
 
         if(cmd.getName().equalsIgnoreCase("feed")) {
@@ -24,6 +24,7 @@ public class feed implements CommandExecutor {
 
 
         return true;
+
     }
 
 }
