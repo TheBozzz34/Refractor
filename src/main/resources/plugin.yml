@@ -6,15 +6,15 @@ api-version: 1.17
 commands:
   generror:
     description: Generate a man-made execption
-    usage: /generror
+    usage: /<command>
     aliases: errorgenerate
   dsc:
     description: Send the link to our discord!
-    usage: /dsc
+    usage: /<command>
     aliases: discord
   feed:
     description: Feeds the player
-    usage: /feed
+    usage: /<command>
     aliases: feedme
 
 
