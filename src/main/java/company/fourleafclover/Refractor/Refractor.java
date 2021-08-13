@@ -1,23 +1,17 @@
 package company.fourleafclover.Refractor;
 
 
+import io.sentry.Sentry;
 import org.bstats.bukkit.Metrics;
-import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
-import org.bukkit.command.Command;
-import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
-import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.plugin.java.JavaPlugin;
-import io.sentry.Sentry;
-
-import java.io.File;
-import java.lang.Exception;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.io.File;
 
 
 public class Refractor extends JavaPlugin {
@@ -43,7 +37,7 @@ public class Refractor extends JavaPlugin {
         }
         FileConfiguration config = this.getConfig();
         config.addDefault("bstats", true);
-        config.addDefault("version", "1.7.1");
+        config.addDefault("version", "1.7.2");
         config.options().copyDefaults(true);
         saveConfig();
         String version = getConfig().getString("version");
@@ -59,6 +53,7 @@ public class Refractor extends JavaPlugin {
         getCommand("generror").setExecutor(commands);
         getCommand("dsc").setExecutor(new dsc());
         getCommand("feed").setExecutor(new feed());
+        getCommand("heal").setExecutor(new heal());
         Sentry.init(options -> {
             options.setDsn("https://438653d78f4044eabce86bfac30ec13b@o561860.ingest.sentry.io/5904137");
             // Set traces_sample_rate to 1.0 to capture 100% of transactions for performance monitoring.
