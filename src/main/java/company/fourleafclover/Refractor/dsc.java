@@ -20,7 +20,7 @@ public class dsc implements CommandExecutor {
 
         if(cmd.getName().equalsIgnoreCase("dsc")) {
             player.sendMessage(ChatColor.GREEN+"Join our discord at dsc.gg/t0ast!");
-            logger.info(cmd.getName());
+
         }
 
 
