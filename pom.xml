@@ -13,7 +13,6 @@
         <maven.compiler.target>1.8</maven.compiler.target>
    </properties>
 
-
     <repositories>
         <!-- This adds the Spigot Maven repository to the build -->
         <repository>
@@ -27,7 +26,7 @@
             <url>https://m2.dv8tion.net/releases</url>
         </repository>
     </repositories>
-    
+
     <dependencies>
         <!--Spigot-->
         <dependency>
@@ -55,20 +54,6 @@
             <artifactId>slf4j-api</artifactId>
             <version>1.7.9</version>
         </dependency>
-        <!--JDA-->
-        <dependency>
-            <groupId>net.dv8tion</groupId>
-            <artifactId>JDA</artifactId>
-            <version>4.3.0_277</version>
-        </dependency>
-        <!--JavaMail-->
-            <dependency>
-                <groupId>com.sun.mail</groupId>
-                <artifactId>javax.mail</artifactId>
-                <version>1.6.2</version>
-            </dependency>
-
-
     </dependencies>
 
     <build>
@@ -96,7 +81,5 @@
             </plugin>
         </plugins>
     </build>
-
-
-
+    
 </project>
