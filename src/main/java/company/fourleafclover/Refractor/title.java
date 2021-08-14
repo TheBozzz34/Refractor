@@ -22,7 +22,6 @@ public class title implements CommandExecutor {
 
             String title = args[1];
             String subtitle = args[2];
-            assert targetPlayer != null;
             targetPlayer.sendTitle(title, subtitle, 1, 20, 1);
 
 
