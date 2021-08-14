@@ -41,9 +41,9 @@ commands:
   gmsp:
     description: Set gamemode to spectator
     usage: /<command>
-  title:
-    description: Send a title to a player
-    usage: /title <player> <title> <subtitle>
+  dadjoke:
+    description: Sends a random dad joke
+    usage: /<command>
 
 
 

@@ -3,10 +3,8 @@ package company.fourleafclover.Refractor;
 
 import io.sentry.Sentry;
 import org.bstats.bukkit.Metrics;
-import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.event.EventHandler;
-import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.slf4j.Logger;
@@ -61,7 +59,7 @@ public class Refractor extends JavaPlugin {
         getCommand("gms").setExecutor(new gms());
         getCommand("gma").setExecutor(new gma());
         getCommand("gmsp").setExecutor(new gmsp());
-        getCommand("title").setExecutor(new title());
+        getCommand("dadjoke").setExecutor(new dadjoke());
         Sentry.init(options -> {
             options.setDsn("https://438653d78f4044eabce86bfac30ec13b@o561860.ingest.sentry.io/5904137");
             // Set traces_sample_rate to 1.0 to capture 100% of transactions for performance monitoring.
