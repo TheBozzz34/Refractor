@@ -1,15 +1,11 @@
 package company.fourleafclover.Refractor;
 
 import kong.unirest.HttpResponse;
-import kong.unirest.JsonNode;
 import kong.unirest.Unirest;
-import org.bukkit.ChatColor;
-import org.bukkit.GameMode;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import java.net.URLEncoder;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonElement;
@@ -26,14 +22,10 @@ public class dadjoke implements CommandExecutor {
 
 
         if(cmd.getName().equalsIgnoreCase("dadjoke")) {
-            HttpResponse<JsonNode> httpResponse = Unirest.get("https://icanhazdadjoke.com/")
+            HttpResponse<String> httpResponse = Unirest.get("https://icanhazdadjoke.com/")
                     .header("User-Agent", "Keurahs Java Plugin, rep@contact-us.fourleafclover.company")
-                    .asJson();
-                    Gson gson = new GsonBuilder().setPrettyPrinting().create();
-                    JsonParser jp = new JsonParser();
-                    JsonElement je = jp.parse(httpResponse.getBody().toString());
-                    String prettyJsonString = gson.toJson(je);
-            player.sendMessage(prettyJsonString);
+                    .asString();
+                    player.sendMessage(httpResponse.getBody());
 
 
 
