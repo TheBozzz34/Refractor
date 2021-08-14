@@ -8,24 +8,25 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.springframework.lang.Nullable;
 
-public class gmc implements CommandExecutor {
+public class title implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if (!(sender instanceof Player)) { return true; }
         Player player = (Player) sender;
+        Player targetPlayer = player.getServer().getPlayer(args[0]);
+
 
 
 
         if(cmd.getName().equalsIgnoreCase("title")) {
-            String subtitle = args[0];
+
             String title = args[1];
-            void sendTitle​(@Nullable
-                    String title,
-                    @Nullable
-                            String subtitle,
-            int fadeIn,
-            int stay,
-            int fadeOut)
+            String subtitle = args[2];
+            assert targetPlayer != null;
+            targetPlayer.sendTitle(title, subtitle, 1, 20, 1);
+
+
+
 
         }
 
