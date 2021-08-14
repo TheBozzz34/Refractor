@@ -23,6 +23,7 @@ public class dadjoke implements CommandExecutor {
 
         if(cmd.getName().equalsIgnoreCase("dadjoke")) {
             HttpResponse<String> httpResponse = Unirest.get("https://icanhazdadjoke.com/")
+                    .header("accept", "text/plain")
                     .header("User-Agent", "Keurahs Java Plugin, rep@contact-us.fourleafclover.company")
                     .asString();
                     player.sendMessage(httpResponse.getBody());
