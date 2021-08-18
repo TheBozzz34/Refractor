@@ -3,7 +3,7 @@ package company.fourleafclover.Refractor;
 import io.sentry.Sentry;
 import org.bstats.bukkit.Metrics;
 import org.bukkit.configuration.file.FileConfiguration;
-import org.bukkit.event.Listener;
+import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,7 +11,9 @@ import org.slf4j.LoggerFactory;
 import java.io.File;
 
 
-public class Refractor extends JavaPlugin implements Listener {
+
+
+public class Refractor extends JavaPlugin {
     @Override
     public void onEnable() {
         Logger logger = LoggerFactory.getLogger(Refractor.class);
@@ -24,6 +26,7 @@ public class Refractor extends JavaPlugin implements Listener {
             // When first trying Sentry it's good to see what the SDK is doing:
             options.setDebug(true);
         });
+
 
                 try {
             if (!getDataFolder().exists()) {
@@ -43,8 +46,11 @@ public class Refractor extends JavaPlugin implements Listener {
 
         FileConfiguration config = this.getConfig();
         config.addDefault("bstats", true);
+        config.addDefault("welcome-message", "Welcome %player_name%");
         config.options().copyDefaults(true);
         saveConfig();
+
+        registerEvents();
 
         if (config.getBoolean("bstats")) {
             int pluginId = 12406;
@@ -76,5 +82,19 @@ public class Refractor extends JavaPlugin implements Listener {
             Sentry.captureException(e);
 
         }
+
+
+
     }
+
+
+    public void registerEvents(){
+
+        PluginManager pm = getServer().getPluginManager();
+
+        pm.registerEvents(new onjoin(),  this);
+    }
+
+
 }
+
