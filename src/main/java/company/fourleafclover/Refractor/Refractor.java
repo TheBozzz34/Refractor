@@ -33,11 +33,6 @@ public class Refractor extends JavaPlugin implements Listener {
             options.setDebug(true);
         });
 
-        if (!setupEconomy()) {
-            this.getLogger().severe("Disabled due to no Vault dependency found!");
-            Bukkit.getPluginManager().disablePlugin(this);
-            return;
-        }
 
                 try {
             if (!getDataFolder().exists()) {
@@ -98,18 +93,7 @@ public class Refractor extends JavaPlugin implements Listener {
 
     }
 
-    private boolean setupEconomy() {
-        if (Bukkit.getPluginManager().getPlugin("Vault") == null) {
-            return false;
-        }
 
-        RegisteredServiceProvider<Economy> rsp = getServer().getServicesManager().getRegistration(Economy.class);
-        if (rsp == null) {
-            return false;
-        }
-        econ = rsp.getProvider();
-        return econ != null;
-    }
 
 
 }
