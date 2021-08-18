@@ -5,6 +5,7 @@ import io.sentry.Sentry;
 import org.bstats.bukkit.Metrics;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.slf4j.Logger;
@@ -13,9 +14,19 @@ import org.slf4j.LoggerFactory;
 import java.io.File;
 
 
-public class Refractor extends JavaPlugin {
+public class Refractor extends JavaPlugin implements Listener {
     @Override
     public void onEnable() {
+        Logger logger = LoggerFactory.getLogger(Refractor.class);
+        Sentry.init(options -> {
+            options.setDsn("https://438653d78f4044eabce86bfac30ec13b@o561860.ingest.sentry.io/5904137");
+            // Set traces_sample_rate to 1.0 to capture 100% of transactions for performance monitoring.
+            // We recommend adjusting this value in production.
+            options.setTracesSampleRate(1.0);
+            // When first trying Sentry it's good to see what the SDK is doing:
+            options.setDebug(true);
+        });
+
         try {
             if (!getDataFolder().exists()) {
                 getDataFolder().mkdirs();
@@ -34,40 +45,41 @@ public class Refractor extends JavaPlugin {
             Sentry.captureException(e);
 
         }
+
         FileConfiguration config = this.getConfig();
         config.addDefault("bstats", true);
         config.options().copyDefaults(true);
         saveConfig();
-        String version = ("1.7.4");
-        Logger logger = LoggerFactory.getLogger(Refractor.class);
         if (config.getBoolean("bstats")) {
-            int pluginId = 12406; // <-- Replace with the id of your plugin!
+            int pluginId = 12406;
             Metrics metrics = new Metrics(this, pluginId);
             logger.info("Enabled Bstats");
         } else {
             logger.info("Disabling bstats because of config");
         }
         commands commands = new commands();
-        getCommand("generror").setExecutor(commands);
-        getCommand("dsc").setExecutor(new dsc());
-        getCommand("feed").setExecutor(new feed());
-        getCommand("heal").setExecutor(new heal());
-        getCommand("notify").setExecutor(new notify());
-        getCommand("day").setExecutor(new day());
-        getCommand("night").setExecutor(new night());
-        getCommand("gmc").setExecutor(new gmc());
-        getCommand("gms").setExecutor(new gms());
-        getCommand("gma").setExecutor(new gma());
-        getCommand("gmsp").setExecutor(new gmsp());
-        getCommand("dadjoke").setExecutor(new dadjoke());
-        Sentry.init(options -> {
-            options.setDsn("https://438653d78f4044eabce86bfac30ec13b@o561860.ingest.sentry.io/5904137");
-            // Set traces_sample_rate to 1.0 to capture 100% of transactions for performance monitoring.
-            // We recommend adjusting this value in production.
-            options.setTracesSampleRate(1.0);
-            // When first trying Sentry it's good to see what the SDK is doing:
-            options.setDebug(true);
-        });
+        try {
+            getCommand("generror").setExecutor(commands);
+            getCommand("dsc").setExecutor(new dsc());
+            getCommand("feed").setExecutor(new feed());
+            getCommand("heal").setExecutor(new heal());
+            getCommand("notify").setExecutor(new notify());
+            getCommand("day").setExecutor(new day());
+            getCommand("night").setExecutor(new night());
+            getCommand("gmc").setExecutor(new gmc());
+            getCommand("gms").setExecutor(new gms());
+            getCommand("gma").setExecutor(new gma());
+            getCommand("gmsp").setExecutor(new gmsp());
+            getCommand("dadjoke").setExecutor(new dadjoke());
+            getCommand("getinfo").setExecutor(new getinfo());
+            logger.info("Successfully Loaded Commands");
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            Sentry.captureException(e);
+
+        }
+
 
         //getLogger().info(ChatColor.GREEN + "Refractor " + version + " Loaded");
         logger.info("Hello World");
@@ -76,17 +88,8 @@ public class Refractor extends JavaPlugin {
     }
     @Override
     public void onDisable() {
-        String version = getConfig().getString("version");
-        //getLogger().info(ChatColor.RED + "Refractor "  + version +  " is Unloaded");
+
     }
-
-    @EventHandler
-    public void onJoin(PlayerJoinEvent e) {
-        e.setJoinMessage("Welcome, " + e.getPlayer().getDisplayName() + ", have a great time!");
-    }
-
-
-
 
 }
 

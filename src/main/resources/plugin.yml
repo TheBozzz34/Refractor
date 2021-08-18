@@ -1,5 +1,5 @@
 name: Refractor
-version: 1.7.5
+version: 1.8
 main: company.fourleafclover.Refractor.Refractor
 author: Keturah#5275
 api-version: 1.17
@@ -43,6 +43,9 @@ commands:
     usage: /<command>
   dadjoke:
     description: Sends a random dad joke
+    usage: /<command>
+  getinfo:
+    description: Sends information about a player
     usage: /<command>
 
 
