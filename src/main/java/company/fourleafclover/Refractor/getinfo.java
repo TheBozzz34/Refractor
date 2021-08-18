@@ -1,6 +1,7 @@
 package company.fourleafclover.Refractor;
 
 
+import io.sentry.Sentry;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.World;
@@ -21,21 +22,26 @@ public class getinfo implements CommandExecutor {
 
 
         if(cmd.getName().equalsIgnoreCase("getinfo")) {
-            String username = target.getDisplayName();
-            Location loc = target.getLocation();
-            String locale = target.getLocale();
-            long time = target.getPlayerTime();
-            int ping = target.getPing();
-            InetSocketAddress address = target.getAddress();
-            World world = target.getWorld();
-            player.sendMessage("--------Player: " + target.getDisplayName() + "--------");
-            player.sendMessage("Username: " + username);
-            player.sendMessage("Location: " + loc);
-            player.sendMessage("Locale: " + locale);
-            player.sendMessage("Playtime: " + time);
-            player.sendMessage("Ping: " + ping);
-            player.sendMessage("Socket Address: " + address);
-            player.sendMessage("World: " + world);
+            try {
+                String username = target.getDisplayName();
+                Location loc = target.getLocation();
+                String locale = target.getLocale();
+                long time = target.getPlayerTime();
+                int ping = target.getPing();
+                InetSocketAddress address = target.getAddress();
+                World world = target.getWorld();
+                player.sendMessage("--------Player: " + target.getDisplayName() + "--------");
+                player.sendMessage("Username: " + username);
+                player.sendMessage("Location: " + loc);
+                player.sendMessage("Locale: " + locale);
+                player.sendMessage("Playtime: " + time);
+                player.sendMessage("Ping: " + ping);
+                player.sendMessage("Socket Address: " + address);
+                player.sendMessage("World: " + world);
+
+            } catch (Exception e) {
+                Sentry.captureException(e);
+            }
 
 
 

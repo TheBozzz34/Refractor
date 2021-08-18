@@ -3,7 +3,7 @@ version: 1.8.4
 main: company.fourleafclover.Refractor.Refractor
 author: Keturah#5275
 api-version: 1.17
-softdepend: [PlaceholderAPI]
+depend: [PlaceholderAPI]
 commands:
   generror:
     description: Generate a man-made execption

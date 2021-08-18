@@ -91,7 +91,6 @@ public class Refractor extends JavaPlugin {
     public void registerEvents(){
 
         PluginManager pm = getServer().getPluginManager();
-
         pm.registerEvents(new onjoin(),  this);
     }
 
