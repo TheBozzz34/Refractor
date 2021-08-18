@@ -2,11 +2,14 @@ package company.fourleafclover.Refractor;
 
 //imports
 import io.sentry.Sentry;
+import net.milkbowl.vault.economy.Economy;
 import org.bstats.bukkit.Metrics;
+import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,6 +18,9 @@ import java.io.File;
 
 
 public class Refractor extends JavaPlugin implements Listener {
+
+    private Economy econ;
+
     @Override
     public void onEnable() {
         Logger logger = LoggerFactory.getLogger(Refractor.class);
@@ -27,7 +33,13 @@ public class Refractor extends JavaPlugin implements Listener {
             options.setDebug(true);
         });
 
-        try {
+        if (!setupEconomy()) {
+            this.getLogger().severe("Disabled due to no Vault dependency found!");
+            Bukkit.getPluginManager().disablePlugin(this);
+            return;
+        }
+
+                try {
             if (!getDataFolder().exists()) {
                 getDataFolder().mkdirs();
             }
@@ -85,11 +97,19 @@ public class Refractor extends JavaPlugin implements Listener {
 
 
     }
-    @Override
-    public void onDisable() {
 
+    private boolean setupEconomy() {
+        if (Bukkit.getPluginManager().getPlugin("Vault") == null) {
+            return false;
+        }
+
+        RegisteredServiceProvider<Economy> rsp = getServer().getServicesManager().getRegistration(Economy.class);
+        if (rsp == null) {
+            return false;
+        }
+        econ = rsp.getProvider();
+        return econ != null;
     }
 
+
 }
-
-
