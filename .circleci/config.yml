@@ -28,7 +28,7 @@ jobs:
           name: Install jFrog CLI
           command: curl -fL https://getcli.jfrog.io | sh
       # Add Jfrog config
-      - run: ./jfrog config add refractor --artifactory-url $ARTIFACTORY_URL --username $ARTIFACTORY_USER --password $PASSWORD --interactive=false
+      - run: ./jfrog config add refractor --artifactory-url $ARTIFACTORY_URL --user $ARTIFACTORY_USER --password $PASSWORD --interactive=false
       # Upload to Jfrog
       - run: ./jfrog rt u "multi*/*.jar" refractor --build-name=Refracor --build-number=$CIRCLE_BUILD_NUM --flat=false
 
