@@ -2,6 +2,9 @@
 # See: https://circleci.com/docs/2.0/configuration-reference
 version: 2.1
 
+orbs:
+  jira: circleci/jira@1.3.1
+
 jobs:
   # Below is the definition of your job to build and test your app, you can rename and customize it as you want.
   build-and-test:  
@@ -28,9 +31,9 @@ jobs:
           name: Install jFrog CLI
           command: curl -fL https://getcli.jfrog.io | sh
       # Add Jfrog config
-      - run: ./jfrog config add refractor --artifactory-url $ARTIFACTORY_URL --user $ARTIFACTORY_USER --password $PASSWORD --interactive=false
+      #    - run: ./jfrog config add refractor --artifactory-url $ARTIFACTORY_URL --user $ARTIFACTORY_USER --password $PASSWORD --interactive=false
       # Upload to Jfrog
-      - run: ./jfrog rt u "multi*/*.jar" refractor --build-name=Refracor --build-number=$CIRCLE_BUILD_NUM --flat=false
+      #  - run: ./jfrog rt u "multi*/*.jar" refractor --build-name=Refracor --build-number=$CIRCLE_BUILD_NUM --flat=false
 
 
       
@@ -44,4 +47,6 @@ workflows:
   build:
     jobs:
       - build-and-test
+          post-steps:
+            - jira/notify
       
