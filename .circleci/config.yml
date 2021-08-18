@@ -23,6 +23,15 @@ jobs:
       - run:
           name: Test
           command: mvn test
+      # Install Jfrog
+      - run:
+          name: Install jFrog CLI
+          command: curl -fL https://getcli.jfrog.io | sh
+      # Add Jfrog config
+      - run: ./jfrog config add refractor --artifactory-url $ARTIFACTORY_URL --user $ARTIFACTORY_USER --apikey $ARTIFACTORY_APIKEY --interactive=false
+      # Upload to Jfrog
+      - run: ./jfrog rt u "multi*/*.jar" refractor --build-name=Refracor --build-number=$CIRCLE_BUILD_NUM --flat=false
+
 
       
 
