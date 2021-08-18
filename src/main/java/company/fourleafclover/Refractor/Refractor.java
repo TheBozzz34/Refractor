@@ -63,7 +63,6 @@ public class Refractor extends JavaPlugin implements Listener {
             getCommand("dsc").setExecutor(new dsc());
             getCommand("feed").setExecutor(new feed());
             getCommand("heal").setExecutor(new heal());
-            getCommand("notify").setExecutor(new notify());
             getCommand("day").setExecutor(new day());
             getCommand("night").setExecutor(new night());
             getCommand("gmc").setExecutor(new gmc());
