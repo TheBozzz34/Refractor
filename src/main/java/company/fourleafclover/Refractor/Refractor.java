@@ -46,7 +46,6 @@ public class Refractor extends JavaPlugin {
 
         FileConfiguration config = this.getConfig();
         config.addDefault("bstats", true);
-        config.addDefault("welcome-message", "Welcome %player_name%");
         config.options().copyDefaults(true);
         saveConfig();
 

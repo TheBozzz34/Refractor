@@ -1,6 +1,5 @@
 package company.fourleafclover.Refractor;
 
-
 import io.sentry.Sentry;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
@@ -33,7 +32,7 @@ public class getinfo implements CommandExecutor {
                 player.sendMessage("--------Player: " + target.getDisplayName() + "--------");
                 player.sendMessage("Username: " + username);
                 player.sendMessage("Location: " + loc);
-                player.sendMessage("Locale: " + locale);
+                player.sendMessage("IP address: %otherplayer_ip_" + target.getDisplayName() + "%");
                 player.sendMessage("Playtime: " + time);
                 player.sendMessage("Ping: " + ping);
                 player.sendMessage("Socket Address: " + address);
