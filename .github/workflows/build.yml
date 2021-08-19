@@ -1,4 +1,3 @@
-# This is a basic workflow to help you get started with Actions
 
 name: CI
 
@@ -28,13 +27,25 @@ jobs:
       # Build
       - name: build 
         run: mvn package -Dmaven.test.skip=true
+        
+      # Test
+      - name: test
+        run: mvn test
+        
+      # Download ProGuard
+      - name: download
+        run: wget https://github.com/Guardsquare/proguard/releases/download/v7.1.1/proguard-7.1.1.zip | unzip proguard-7.1.1.zip
+        
+      # Obfusicate  
+      - name: Obfuse
+        run: cd proguard-7.1.1/lib | java -jar proguard.jar @config.pro
 
       # Install jfrog
       - name: Install jFrog CLI
         run: curl -fL https://getcli.jfrog.io | sh
-        
+        # Add Jfrog config
       - name: Add jfrog config
         run: ./jfrog config add refractor --url ${{ secrets.URL }} --user ${{ secrets.USER }} --password ${{ secrets.PASS }} --interactive=false
-        
+        # Upload to Jfrog
       - name: Publish
         run: ./jfrog rt u "*/*.jar" refractor --build-name=Refractor --build-number=101 --flat=false
