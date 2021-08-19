@@ -34,7 +34,12 @@ jobs:
         
       # Download ProGuard
       - name: download
-        run: wget https://github.com/Guardsquare/proguard/releases/download/v7.1.1/proguard-7.1.1.zip | unzip proguard-7.1.1.zip
+        run: wget https://github.com/Guardsquare/proguard/releases/download/v7.1.1/proguard-7.1.1.zip 
+        
+      # unzip
+      - name: unzip
+        run: unzip proguard-7.1.1.zip
+      
         
       # Obfusicate  
       - name: Obfuse
