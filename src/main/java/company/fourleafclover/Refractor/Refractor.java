@@ -18,14 +18,6 @@ public class Refractor extends JavaPlugin {
     public void onEnable() {
         Logger logger = LoggerFactory.getLogger(Refractor.class);
 
-        Sentry.init(options -> {
-            options.setDsn("https://438653d78f4044eabce86bfac30ec13b@o561860.ingest.sentry.io/5904137");
-            // Set traces_sample_rate to 1.0 to capture 100% of transactions for performance monitoring.
-            // We recommend adjusting this value in production.
-            options.setTracesSampleRate(1.0);
-            // When first trying Sentry it's good to see what the SDK is doing:
-            options.setDebug(true);
-        });
 
 
                 try {
@@ -46,8 +38,16 @@ public class Refractor extends JavaPlugin {
 
         FileConfiguration config = this.getConfig();
         config.addDefault("bstats", true);
+        config.addDefault("sentry-debug", false);
         config.options().copyDefaults(true);
         saveConfig();
+
+        Sentry.init(options -> {
+            options.setDsn("https://438653d78f4044eabce86bfac30ec13b@o561860.ingest.sentry.io/5904137");
+            options.setTracesSampleRate(1.0);
+            // Set to true for init messages
+            options.setDebug(config.getBoolean("sentry-debug"));
+        });
 
         registerEvents();
 

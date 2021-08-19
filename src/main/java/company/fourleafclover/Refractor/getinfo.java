@@ -35,7 +35,7 @@ public class getinfo implements CommandExecutor {
                 World world = target.getWorld();
                 player.sendMessage("--------Player: " + target.getDisplayName() + "--------");
                 player.sendMessage("Username: " + username);
-                player.sendMessage("Location: " + "X: " + x + "Y: " + y + "Z: " + z );
+                player.sendMessage("Location: " + "X: " + x + " Y: " + y + " Z: " + z );
                 player.sendMessage("IP address: " + target.getAddress().getAddress());
                 player.sendMessage("Playtime: " + time);
                 player.sendMessage("Ping: " + ping);
