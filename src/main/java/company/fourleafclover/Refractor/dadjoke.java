@@ -18,9 +18,6 @@ public class dadjoke implements CommandExecutor {
         Player player = (Player) sender;
 
 
-
-
-
         if(cmd.getName().equalsIgnoreCase("dadjoke")) {
             HttpResponse<String> httpResponse = Unirest.get("https://icanhazdadjoke.com/")
                     .header("accept", "text/plain")
