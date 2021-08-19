@@ -6,5 +6,5 @@ A 1.17 plugin curently being developed by `Keturah#5275`, check out the [plugin.
 
 [Jenkins](https://35.222.46.52/job/Refractor/lastStableBuild/) for building, [Artifactory](https://keturah.jfrog.io/artifactory/refractor/target) has the lastest artifacts
 
-[Releases](https://github.com/TheBozzz34/Refractor/releases/latest) Has the lastest official release
+[Releases](https://github.com/TheBozzz34/Refractor/releases/latest) page has the lastest official release
 
