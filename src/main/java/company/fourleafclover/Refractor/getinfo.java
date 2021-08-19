@@ -1,5 +1,6 @@
 package company.fourleafclover.Refractor;
 
+import me.clip.placeholderapi.PlaceholderAPI;
 import io.sentry.Sentry;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
