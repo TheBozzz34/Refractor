@@ -9,7 +9,7 @@
 
 ![logo](https://bstats.org/signatures/bukkit/Refractor.svg)
 
-A 1.17 plugin curently being developed by [Keturah#5275](https://discord.gg/5uEZCpMCh8), requires [PlaceholderAPI](https://www.spigotmc.org/resources/placeholderapi.6245/)
+A 1.17 plugin curently being developed by [Keturah#5275](https://discord.gg/5uEZCpMCh8), requires PlaceholderAPI
 
 [Jenkins](https://35.222.46.52/job/Refractor/lastStableBuild/) for building, [Artifactory](https://keturah.jfrog.io/artifactory/refractor/target) has the lastest artifacts
 
