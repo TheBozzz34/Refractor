@@ -1,6 +1,11 @@
 # Refractor
+| Type              | Badges                                                                                                                                                                                                                                                                                                                                                                                |
+|-------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **General:**      | ![](https://img.shields.io/github/v/release/thebozzz34/Refractor) ![](https://img.shields.io/badge/Supports%3A%20-Spigot%201.17-orange)                                                                                                                                                                                                                                              |                                             |
+| **CI:**   | [![CI](https://github.com/TheBozzz34/Refractor/actions/workflows/build.yml/badge.svg)](https://github.com/TheBozzz34/Refractor/actions/workflows/build.yml)  |
+| **Discord:**    | ![chat](https://img.shields.io/discord/771017297816846387?color=%234e5d94)                                                                                                                                                                                                                                                             |
 
-[![CI](https://github.com/TheBozzz34/Refractor/actions/workflows/build.yml/badge.svg)](https://github.com/TheBozzz34/Refractor/actions/workflows/build.yml)
+
 
 ![logo](https://bstats.org/signatures/bukkit/Refractor.svg)
 
