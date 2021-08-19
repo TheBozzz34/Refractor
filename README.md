@@ -1,7 +1,6 @@
 # Refractor
 
-
-[![CircleCI](https://circleci.com/gh/TheBozzz34/Refractor/tree/master.svg?style=svg)](https://circleci.com/gh/TheBozzz34/Refractor/tree/master) [![CI](https://github.com/TheBozzz34/Refractor/actions/workflows/build.yml/badge.svg)](https://github.com/TheBozzz34/Refractor/actions/workflows/build.yml)
+[![CI](https://github.com/TheBozzz34/Refractor/actions/workflows/build.yml/badge.svg)](https://github.com/TheBozzz34/Refractor/actions/workflows/build.yml)
 
 ![logo](https://bstats.org/signatures/bukkit/Refractor.svg)
 
