@@ -43,7 +43,10 @@ jobs:
         
       # Obfusicate  
       - name: Obfuse
-        run: cd proguard-7.1.1/lib | java -jar proguard.jar @config.pro
+        run: cd proguard-7.1.1/lib 
+        
+      - name: run ProGuard
+        run: java -jar proguard.jar @config.pro
 
       # Install jfrog
       - name: Install jFrog CLI
