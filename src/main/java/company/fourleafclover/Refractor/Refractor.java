@@ -71,6 +71,7 @@ public class Refractor extends JavaPlugin {
             getCommand("gmsp").setExecutor(new gmsp());
             getCommand("dadjoke").setExecutor(new dadjoke());
             getCommand("getinfo").setExecutor(new getinfo());
+            getCommand("author").setExecutor(new author());
             logger.info("Successfully Loaded Commands");
 
         } catch (Exception e) {

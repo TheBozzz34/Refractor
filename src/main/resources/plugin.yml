@@ -56,6 +56,10 @@ commands:
     description: Sends information about a player
     usage: /<command>
     permission: refractor.getinfo
+  author:
+    description: Sends a message with my discord tag
+    usage: /<command>
+    permission: refractor.author
 
 
 
