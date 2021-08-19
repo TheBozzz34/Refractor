@@ -37,4 +37,4 @@ jobs:
         run: ./jfrog config add refractor --url ${{ secrets.URL }} --user ${{ secrets.USER }} --password ${{ secrets.PASS }} --interactive=false
         
       - name: Publish
-        run: ./jfrog rt u "*/*.jar" refractor --build-name=Refractor --build-number=${{ github.run_number }} --flat=false
+        run: ./jfrog rt u "*/*.jar" refractor --build-name=Refractor --build-number=101 --flat=false
