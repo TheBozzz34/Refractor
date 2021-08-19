@@ -2,11 +2,6 @@
 
 name: CI
 
-env:
-      URL: ${{ secrets.URL }}
-      USER: ${{ secrets.USER }}
-      PASS: ${{ secrets.PASS }}
-
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
@@ -39,7 +34,7 @@ jobs:
         run: curl -fL https://getcli.jfrog.io | sh
         
       - name: Add jfrog config
-        run: ./jfrog config add refractor --artifactory-url $URL --user $USER --password $PASS --interactive=false
+        run: ./jfrog config add refractor --artifactory-url ${{ secrets.URL }} --user ${{ secrets.USER }} --password ${{ secrets.PASS }} --interactive=false
         
       - name: Publish
         run: ./jfrog rt u "multi*/*.jar" refractor --build-name=Refractor --build-number=${{ github.run_number }} --flat=false
