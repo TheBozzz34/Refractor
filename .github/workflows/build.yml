@@ -39,7 +39,7 @@ jobs:
         run: curl -fL https://getcli.jfrog.io | sh
         
       - name: Add jfrog config
-        run: ./jfrog config add refractor --artifactory-url "$URL" --user $USER --password $PASS --interactive=false
+        run: ./jfrog config add refractor --artifactory-url $URL --user $USER --password $PASS --interactive=false
         
       - name: Publish
         run: ./jfrog rt u "multi*/*.jar" refractor --build-name=Refractor --build-number=${{ github.run_number }} --flat=false
