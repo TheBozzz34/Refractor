@@ -25,6 +25,9 @@ public class getinfo implements CommandExecutor {
             try {
                 String username = target.getDisplayName();
                 Location loc = target.getLocation();
+                int x = loc.getBlockX();
+                int y = loc.getBlockY();
+                int z = loc.getBlockZ();
                 String locale = target.getLocale();
                 long time = target.getPlayerTime();
                 int ping = target.getPing();
@@ -32,8 +35,8 @@ public class getinfo implements CommandExecutor {
                 World world = target.getWorld();
                 player.sendMessage("--------Player: " + target.getDisplayName() + "--------");
                 player.sendMessage("Username: " + username);
-                player.sendMessage("Location: " + loc);
-                player.sendMessage("IP address: %otherplayer_ip_" + target.getDisplayName() + "%");
+                player.sendMessage("Location: " + "X: " + x + "Y: " + y + "Z: " + z );
+                player.sendMessage("IP address: " + target.getAddress().getAddress());
                 player.sendMessage("Playtime: " + time);
                 player.sendMessage("Ping: " + ping);
                 player.sendMessage("Socket Address: " + address);
