@@ -1,0 +1,5 @@
+-injars */*.jar
+-outjars Refractor.jar
+-printmapping proguard.map
+-verbose
+-keep public class company.fourleafclover.Refractor.Refractor

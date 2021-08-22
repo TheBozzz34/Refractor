@@ -17,27 +17,16 @@ public class Refractor extends JavaPlugin {
     @Override
     public void onEnable() {
         Logger logger = LoggerFactory.getLogger(Refractor.class);
-
-        Sentry.init(options -> {
-            options.setDsn("https://438653d78f4044eabce86bfac30ec13b@o561860.ingest.sentry.io/5904137");
-            // Set traces_sample_rate to 1.0 to capture 100% of transactions for performance monitoring.
-            // We recommend adjusting this value in production.
-            options.setTracesSampleRate(1.0);
-            // When first trying Sentry it's good to see what the SDK is doing:
-            options.setDebug(true);
-        });
-
-
                 try {
             if (!getDataFolder().exists()) {
                 getDataFolder().mkdirs();
             }
             File file = new File(getDataFolder(), "config.yml");
             if (!file.exists()) {
-                getLogger().info("Config.yml not found, creating!");
+                logger.info("Config.yml not found, creating!");
                 saveDefaultConfig();
             } else {
-                getLogger().info("Config.yml found, loading!");
+                logger.info("Config.yml found, loading!");
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -46,9 +35,16 @@ public class Refractor extends JavaPlugin {
 
         FileConfiguration config = this.getConfig();
         config.addDefault("bstats", true);
-        config.addDefault("welcome-message", "Welcome %player_name%");
+        config.addDefault("sentry-debug", false);
         config.options().copyDefaults(true);
         saveConfig();
+
+        Sentry.init(options -> {
+            options.setDsn("https://438653d78f4044eabce86bfac30ec13b@o561860.ingest.sentry.io/5904137");
+            options.setTracesSampleRate(1.0);
+            // Set to true for init messages
+            options.setDebug(config.getBoolean("sentry-debug"));
+        });
 
         registerEvents();
 
@@ -75,6 +71,7 @@ public class Refractor extends JavaPlugin {
             getCommand("gmsp").setExecutor(new gmsp());
             getCommand("dadjoke").setExecutor(new dadjoke());
             getCommand("getinfo").setExecutor(new getinfo());
+            getCommand("author").setExecutor(new author());
             logger.info("Successfully Loaded Commands");
 
         } catch (Exception e) {

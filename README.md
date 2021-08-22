@@ -1,8 +1,18 @@
 # Refractor
+| Type              | Badges                                                                                                                                                                                                                                                                                                                                                                                |
+|-------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **General:**      | ![](https://img.shields.io/github/v/release/thebozzz34/Refractor) ![](https://img.shields.io/badge/Supports%3A%20-Spigot%201.17-orange)   ![quality](https://www.code-inspector.com/project/26624/score/svg)                                                                                                                                                                                                                                            |                                             |
+| **CI:**   | [![CI](https://github.com/TheBozzz34/Refractor/actions/workflows/build.yml/badge.svg)](https://github.com/TheBozzz34/Refractor/actions/workflows/build.yml) [![.github/workflows/code-quality.yml](https://github.com/TheBozzz34/Refractor/actions/workflows/code-quality.yml/badge.svg)](https://github.com/TheBozzz34/Refractor/actions/workflows/code-quality.yml)  |
+| **Info:**    | ![chat](https://img.shields.io/discord/771017297816846387?color=%234e5d94) ![downloads](https://img.shields.io/github/downloads/thebozzz34/Refractor/latest/total)  |                                                                                                                                             
 
-[![CircleCI](https://circleci.com/gh/TheBozzz34/Refractor/tree/master.svg?style=svg)](https://circleci.com/gh/TheBozzz34/Refractor/tree/master) [![CI](https://github.com/TheBozzz34/Refractor/actions/workflows/build.yml/badge.svg)](https://github.com/TheBozzz34/Refractor/actions/workflows/build.yml)
 
-A 1.17 plugin curently being developed by `Keturah#5275`, check out the [plugin.yml](https://github.com/TheBozzz34/Refractor/blob/master/src/main/resources/plugin.yml) for commands, requires [PlaceholderAPI](https://www.spigotmc.org/resources/placeholderapi.6245/)
+
+
+![logo](https://bstats.org/signatures/bukkit/Refractor.svg)
+
+A 1.17 plugin curently being developed by [Keturah#5275](https://discord.gg/5uEZCpMCh8), requires PlaceholderAPI
 
 [Jenkins](https://35.222.46.52/job/Refractor/lastStableBuild/) for building, [Artifactory](https://keturah.jfrog.io/artifactory/refractor/target) has the lastest artifacts
+
+[Releases](https://github.com/TheBozzz34/Refractor/releases/latest) page has the lastest official release, also check out the [wiki](https://github.com/TheBozzz34/Refractor/wiki) for commands
 
