@@ -53,7 +53,7 @@ commands:
     usage: /<command>
     permission: refractor.dadjoke
   getinfo:
-    description: Sends information about a player
+    description: Gets information about a player
     usage: /<command>
     permission: refractor.getinfo
 
