@@ -14,5 +14,5 @@ A 1.17 plugin curently being developed by [Keturah#5275](https://discordapp.com/
 
  [Artifactory](https://keturah.jfrog.io/artifactory/refractor/target) has the lastest artifacts
 
-[Releases](https://github.com/TheBozzz34/Refractor/releases/latest) page has the lastest official release, also check out the [wiki](https://github.com/TheBozzz34/Refractor/wiki) for commands
+[Releases](https://github.com/TheBozzz34/Refractor/releases/latest) page has the lastest official release, also check out the [wiki](https://github.com/TheBozzz34/Refractor/wiki) for commands.
 
