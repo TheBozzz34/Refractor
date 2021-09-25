@@ -7,7 +7,6 @@
 
 
 
-
 ![logo](https://bstats.org/signatures/bukkit/Refractor.svg)
 
 A 1.17 plugin curently being developed by [Keturah#5275](https://discordapp.com/users/457659194535837727), requires PlaceholderAPI
