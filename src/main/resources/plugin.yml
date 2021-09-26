@@ -31,7 +31,7 @@ commands:
   night:
     description: Set time to night
     usage: /<command>
-    permission: refractor.day
+    permission: refractor.night
   gmc:
     description: Set gamemode to creative
     usage: /<command>
