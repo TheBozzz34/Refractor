@@ -1,5 +1,5 @@
 name: Refractor
-version: 1.8.7
+version: 1.8.8
 main: company.fourleafclover.Refractor.Refractor
 author: Keturah#5275
 api-version: 1.17
@@ -56,10 +56,7 @@ commands:
     description: Gets information about a player
     usage: /<command>
     permission: refractor.getinfo
-  author:
-    description: Sends a message with my discord tag
-    usage: /<command>
-    permission: refractor.author
+
 
 
 
