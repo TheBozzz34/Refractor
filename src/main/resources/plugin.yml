@@ -56,6 +56,11 @@ commands:
     description: Gets information about a player
     usage: /<command>
     permission: refractor.getinfo
+  refractor:
+    description: Plugin information
+    usage: /<command>
+
+
 
 
 
