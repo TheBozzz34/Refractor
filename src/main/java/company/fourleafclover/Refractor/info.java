@@ -4,12 +4,14 @@ import kong.unirest.HttpResponse;
 import kong.unirest.JsonNode;
 import kong.unirest.Unirest;
 import kong.unirest.json.JSONObject;
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.GameMode;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.plugin.PluginDescriptionFile;
 
 public class info implements CommandExecutor {
     @Override
@@ -26,8 +28,10 @@ public class info implements CommandExecutor {
             JSONObject raw = version_json.getBody().getObject();
             String version = raw.getString("name");
 
+            String localver = ("1.8.8");
 
-            player.sendMessage(ChatColor.GREEN + "Refractor plugin by Sada/n#0001, Using version: " + version);
+
+            player.sendMessage(ChatColor.GREEN + "Refractor plugin by Sada/n#0001, Remote version: " + version + "Using version: " + localver);
 
         }
 
