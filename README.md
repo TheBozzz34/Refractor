@@ -9,7 +9,7 @@
 
 ![logo](https://bstats.org/signatures/bukkit/Refractor.svg)
 
-A 1.17 plugin currently being developed by [sada/n#0001](https://discordapp.com/users/457659194535837727), requires PlaceholderAPI
+A 1.17 plugin currently being developed by [sada/n#0001](https://discordapp.com/users/457659194535837727), requires PlaceholderAPI.
 
  [Artifactory](https://keturah.jfrog.io/artifactory/refractor/target) has the lastest artifacts
 
