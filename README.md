@@ -13,4 +13,4 @@ A 1.17 plugin currently being developed by [sada/n#0001](https://discordapp.com/
 
  [Artifactory](https://keturah.jfrog.io/artifactory/refractor/target) has the lastest artifacts
 
-[Releases](https://github.com/TheBozzz34/Refractor/releases/latest) page is OUTDATED, check the [Spigot Page](https://www.spigotmc.org/resources/refractor.96459/) for the latest release or the [latest jenkins](https://2.droplet.fourleafclover.company/job/Refractor/lastBuild/) for bleeding edge
+[Releases](https://github.com/TheBozzz34/Refractor/releases/latest) page is OUTDATED, check the [Spigot Page](https://www.spigotmc.org/resources/refractor.96459/) for the latest release or the [latest jenkins](https://jenkins.fourleafclover.company/job/Refractor/lastBuild/) for bleeding edge
