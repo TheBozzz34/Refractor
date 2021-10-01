@@ -10,10 +10,7 @@ import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import java.io.File;
-
-
 
 
 public class Refractor extends JavaPlugin {
@@ -90,16 +87,11 @@ public class Refractor extends JavaPlugin {
         } catch (Exception e) {
             e.printStackTrace();
             Sentry.captureException(e);
-
         }
-
-
 
     }
 
-
     public void registerEvents(){
-
         PluginManager pm = getServer().getPluginManager();
         pm.registerEvents(new onjoin(),  this);
     }
