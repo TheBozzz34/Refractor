@@ -1,6 +1,6 @@
 package company.fourleafclover.Refractor;
 
-import de.jeff_media.updatechecker.UpdateChecker;
+//import de.jeff_media.updatechecker.UpdateChecker;
 import io.sentry.Sentry;
 import org.bstats.bukkit.Metrics;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -46,15 +46,15 @@ public class Refractor extends JavaPlugin {
             options.setDebug(config.getBoolean("sentry-debug"));
         });
         
-        try {
-            UpdateChecker.init(this, 96459)
-                    .checkEveryXHours(24) // Check every 24 hours
-                    .checkNow(); // And check right now
+//        try {
+  //          UpdateChecker.init(this, 96459)
+    //                .checkEveryXHours(24) // Check every 24 hours
+      //              .checkNow(); // And check right now
 
-        } catch (Exception e) {
-            e.printStackTrace();
-            Sentry.captureException(e);
-        }
+        //} catch (Exception e) {
+          //  e.printStackTrace();
+            //Sentry.captureException(e);
+        //}
 
         registerEvents();
 
