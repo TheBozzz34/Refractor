@@ -1,6 +1,6 @@
 language: java
 deploy:
   provider: s3
-  access_key_id: ID
-  secret_access_key: KEY
+  access_key_id: $ID
+  secret_access_key: $KEY
   bucket: "artifacts-2847391"
