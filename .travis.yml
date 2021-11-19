@@ -1,7 +1,6 @@
 language: java
-script:
-  - jdk_switcher use openjdk17
-  - # do stuff with open Java 17
+jdk:
+  - openjdk11
 deploy:
   provider: s3
   access_key_id: $ID
