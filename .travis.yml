@@ -9,3 +9,4 @@ deploy:
   access_key_id: $ID
   secret_access_key: $KEY
   bucket: "artifacts-2847391"
+  file: '*SNAPSHOT.jar'
