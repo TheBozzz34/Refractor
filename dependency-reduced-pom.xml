@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>company.fourleafclover</groupId>
   <artifactId>Refractor</artifactId>
-  <version>1.7.1-SNAPSHOT</version>
+  <version>1.8.8-SNAPSHOT</version>
   <build>
     <plugins>
       <plugin>
@@ -38,6 +38,10 @@
       <name>m2-dv8tion</name>
       <url>https://m2.dv8tion.net/releases</url>
     </repository>
+    <repository>
+      <id>placeholderapi</id>
+      <url>https://repo.extendedclip.com/content/repositories/placeholderapi/</url>
+    </repository>
   </repositories>
   <dependencies>
     <dependency>
@@ -64,10 +68,24 @@
         </exclusion>
       </exclusions>
     </dependency>
+    <dependency>
+      <groupId>me.clip</groupId>
+      <artifactId>placeholderapi</artifactId>
+      <version>2.10.10</version>
+      <scope>provided</scope>
+      <exclusions>
+        <exclusion>
+          <artifactId>annotations</artifactId>
+          <groupId>org.jetbrains</groupId>
+        </exclusion>
+      </exclusions>
+    </dependency>
   </dependencies>
   <properties>
+    <email.version>1.16.18</email.version>
     <maven.compiler.target>1.8</maven.compiler.target>
     <maven.compiler.source>1.8</maven.compiler.source>
+    <spring.version>5.3.10</spring.version>
   </properties>
 </project>
 
