@@ -1,6 +1,6 @@
 language: java
 deploy:
   provider: s3
-  access_key_id: ${{ secrets.Id }}
-  secret_access_key: ${{ secrets.key }}
-  bucket: "S3 Bucket"
+  access_key_id: ${{ secrets.ID }}
+  secret_access_key: ${{ secrets.KEY }}
+  bucket: "artifacts-2847391"
