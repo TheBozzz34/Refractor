@@ -1,0 +1,6 @@
+language: java
+deploy:
+  provider: s3
+  access_key_id: ${{ secrets.Id }}
+  secret_access_key: ${{ secrets.key }}
+  bucket: "S3 Bucket"
