@@ -32,11 +32,12 @@
             <id>placeholderapi</id>
             <url>https://repo.extendedclip.com/content/repositories/placeholderapi/</url>
         </repository>
-        <!--Update Checker-->
+        <!--Update Checker
         <repository>
             <id>jeff-media-gbr</id>
             <url>https://repo.jeff-media.de/maven2/</url>
         </repository>
+         -->
     </repositories>
 
 
@@ -105,13 +106,6 @@
             <version>2.10.10</version>
             <scope>provided</scope>
         </dependency>
-        <!--Update Check-->
-        <dependency>
-            <groupId>de.jeff_media</groupId>
-            <artifactId>SpigotUpdateChecker</artifactId>
-            <version>1.2.4</version> <!-- Check on GitHub for the latest version -->
-            <scope>compile</scope>
-        </dependency>
 
     </dependencies>
 
@@ -127,12 +121,6 @@
                         <relocation>
                             <pattern>org.bstats</pattern>
                             <shadedPattern>company.fourleafclover.Refractor</shadedPattern>
-                        </relocation>
-                        <!-- Using the maven-shade-plugin to shade and relocate the UpdateChecker -->
-                        <!-- Replace "your.package" with your plugin's package name -->
-                        <relocation>
-                            <pattern>de.jeff_media.updatechecker</pattern>
-                            <shadedPattern>company.fourleafclover.updatechecker</shadedPattern>
                         </relocation>
                     </relocations>
                 </configuration>
