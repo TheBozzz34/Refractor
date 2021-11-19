@@ -1,6 +1,9 @@
 language: java
 jdk:
   - openjdk11
+script:
+  - java -version
+  - mvn package
 deploy:
   provider: s3
   access_key_id: $ID
