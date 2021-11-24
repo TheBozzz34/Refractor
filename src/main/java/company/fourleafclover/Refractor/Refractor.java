@@ -3,6 +3,8 @@ package company.fourleafclover.Refractor;
 //import de.jeff_media.updatechecker.UpdateChecker;
 import io.sentry.Sentry;
 import org.bstats.bukkit.Metrics;
+import org.bukkit.Bukkit;
+import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.PluginDescriptionFile;
