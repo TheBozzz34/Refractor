@@ -10,6 +10,9 @@
 
 A 1.17 plugin currently being developed by [sada/n#0001](https://discordapp.com/users/457659194535837727), requires PlaceholderAPI.
 
- [Artifactory](https://keturah.jfrog.io/artifactory/refractor/target) has the lastest artifacts
+ 
 
-[Releases](https://github.com/TheBozzz34/Refractor/releases/latest) page is OUTDATED, check the [Spigot Page](https://www.spigotmc.org/resources/refractor.96459/) for the latest release or the [latest jenkins](https://jenkins.fourleafclover.company/job/Refractor/lastBuild/) for bleeding edge
+### In the proccess of migrating CI's, development is on hold for now
+
+
+[Releases](https://github.com/TheBozzz34/Refractor/releases/latest) page is OUTDATED, check the [Spigot Page](https://www.spigotmc.org/resources/refractor.96459/) for the latest release 
