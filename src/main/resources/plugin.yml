@@ -1,8 +1,10 @@
 name: Refractor
-version: 1.8.9
+version: 1.9
 main: company.fourleafclover.Refractor.Refractor
-author: Keturah#5275
+author: Sada\n#9264
 api-version: 1.17
+description: Just some server essentials
+website: fourleafclover.company
 depend: [PlaceholderAPI]
 commands:
   generror:
