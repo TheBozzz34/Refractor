@@ -12,7 +12,7 @@ A 1.17 plugin currently being developed by [Sada\n#9264](https://discordapp.com/
 
  
 
-### In the proccess of migrating CI's, development is on hold for now
+### I'm currently focusing on other projects, development is on hold for now
 
 
 [Releases](https://github.com/TheBozzz34/Refractor/releases/latest) page is OUTDATED, check the [Spigot Page](https://www.spigotmc.org/resources/refractor.96459/) for the latest release 
