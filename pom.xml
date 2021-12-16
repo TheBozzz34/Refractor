@@ -11,7 +11,7 @@
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <spring.version>5.3.10</spring.version>
+        <spring.version>5.3.13</spring.version>
         <email.version>1.16.18</email.version>
    </properties>
 
