@@ -18,16 +18,7 @@ public class onjoin implements Listener {
     // EventHandler to recognize the event.
     public void onPlayerJoin(PlayerJoinEvent event){
 
-        try {
-            ConsoleCommandSender console = Bukkit.getServer().getConsoleSender();
-            String ecloud = "papi ecloud download player";
-            String reload = "papi reload";
-            Bukkit.dispatchCommand(console, ecloud);
-        } catch (Exception error) {
-            error.printStackTrace();
-            Sentry.captureException(error);
 
-        }
         String joinText = "&c%player_name% joined the server!";
         joinText = PlaceholderAPI.setPlaceholders(event.getPlayer(), joinText);
         event.setJoinMessage(joinText);

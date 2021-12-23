@@ -27,15 +27,10 @@ public class info implements CommandExecutor {
 
             JSONObject raw = version_json.getBody().getObject();
             String version = raw.getString("name");
+            String LOCALVERSION = Refractor.getPlugin(Refractor.class).getConfig().getString("version");
 
-            String localver = ("1.8.8");
-
-
-            player.sendMessage(ChatColor.GREEN + "Refractor plugin by Sada/n#0001, Remote version: " + version + "Using version: " + localver);
-
+            player.sendMessage(ChatColor.GREEN + "Refractor plugin by Sada\\n#9264, Remote version: " + version + " Using version: " + LOCALVERSION);
         }
-
-
         return true;
     }
 

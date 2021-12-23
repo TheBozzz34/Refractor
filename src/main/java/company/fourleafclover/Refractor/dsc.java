@@ -19,7 +19,8 @@ public class dsc implements CommandExecutor {
 
 
         if(cmd.getName().equalsIgnoreCase("dsc")) {
-            player.sendMessage(ChatColor.GREEN+"Join our discord at dsc.gg/t0ast!");
+            String DISCORD = Refractor.getPlugin(Refractor.class).getConfig().getString("discord-link");
+            player.sendMessage(ChatColor.GREEN + "Join our discord at " + DISCORD);
 
         }
 

@@ -13,13 +13,10 @@ public class night implements CommandExecutor {
         if (!(sender instanceof Player)) { return true; }
         Player player = (Player) sender;
 
-
         if(cmd.getName().equalsIgnoreCase("night")) {
             player.getWorld().setTime(18000);
             player.sendMessage(ChatColor.BLUE+"Set time to night");
         }
-
-
         return true;
     }
 

@@ -3,11 +3,7 @@ package company.fourleafclover.Refractor;
 import de.jeff_media.updatechecker.UpdateChecker;
 import io.sentry.Sentry;
 import org.bstats.bukkit.Metrics;
-import org.bukkit.Bukkit;
-import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
-import org.bukkit.plugin.Plugin;
-import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.slf4j.Logger;
@@ -43,7 +39,8 @@ public class Refractor extends JavaPlugin {
         FileConfiguration config = this.getConfig();
         config.addDefault("bstats", true);
         config.addDefault("sentry-debug", false);
-        config.addDefault("weather-api-key", "api key here");
+        config.addDefault("discord-link", "Discord Server Invite URL");
+        config.addDefault("version", "2.5");
         config.options().copyDefaults(true);
         saveConfig();
 
@@ -89,8 +86,8 @@ public class Refractor extends JavaPlugin {
             getCommand("gmsp").setExecutor(new gmsp());
             getCommand("dadjoke").setExecutor(new dadjoke());
             getCommand("getinfo").setExecutor(new getinfo());
-            getCommand("refractor").setExecutor(new info());
-            getCommand("weather").setExecutor(new weather());
+            getCommand("refractor").setExecutor(new info());;
+            getCommand("title").setExecutor(new title());
             logger.info("Successfully Loaded Commands");
 
         } catch (Exception e) {

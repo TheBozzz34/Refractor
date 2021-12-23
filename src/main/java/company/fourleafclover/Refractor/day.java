@@ -1,6 +1,6 @@
 package company.fourleafclover.Refractor;
 
-import dorkbox.notify.Notify;
+
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -16,14 +16,9 @@ public class day implements CommandExecutor {
         Player player = (Player) sender;
         player.sendMessage(ChatColor.YELLOW + "Time set to day");
 
-
         if (cmd.getName().equalsIgnoreCase("day")) {
             player.getWorld().setTime(0);
-
-
-
         }
-
         return true;
     }
 
