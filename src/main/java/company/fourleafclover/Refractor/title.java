@@ -8,6 +8,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+//TODO: Fix no arguments error
 
 public class title implements CommandExecutor {
     @Override

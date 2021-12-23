@@ -14,7 +14,6 @@
         <spring.version>5.3.10</spring.version>
         <email.version>1.16.18</email.version>
    </properties>
-
     <repositories>
         <!-- This adds the Spigot Maven repository to the build -->
         <repository>
