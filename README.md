@@ -16,3 +16,5 @@ A 1.17 plugin currently being developed by [Sada\n#9264](https://discordapp.com/
 
 
 [Releases](https://github.com/TheBozzz34/Refractor/releases/latest) page is OUTDATED, check the [Spigot Page](https://www.spigotmc.org/resources/refractor.96459/) for the latest release 
+
+`String DISCORD = Refractor.getPlugin(Refractor.class).getConfig().getString("discord-link");`
