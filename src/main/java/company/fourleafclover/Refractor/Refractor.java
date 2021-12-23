@@ -16,8 +16,13 @@ import java.io.File;
 
 
 public class Refractor extends JavaPlugin {
+
+    public static Refractor plugin;
+
     @Override
     public void onEnable() {
+
+        plugin = this;
         Logger logger = LoggerFactory.getLogger(Refractor.class);
                 try {
             if (!getDataFolder().exists()) {
@@ -38,6 +43,7 @@ public class Refractor extends JavaPlugin {
         FileConfiguration config = this.getConfig();
         config.addDefault("bstats", true);
         config.addDefault("sentry-debug", false);
+        config.addDefault("weather-api-key", "api key here");
         config.options().copyDefaults(true);
         saveConfig();
 
@@ -84,6 +90,7 @@ public class Refractor extends JavaPlugin {
             getCommand("dadjoke").setExecutor(new dadjoke());
             getCommand("getinfo").setExecutor(new getinfo());
             getCommand("refractor").setExecutor(new info());
+            getCommand("weather").setExecutor(new weather());
             logger.info("Successfully Loaded Commands");
 
         } catch (Exception e) {

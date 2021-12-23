@@ -1,5 +1,5 @@
 name: Refractor
-version: 2.0
+version: 2.1
 main: company.fourleafclover.Refractor.Refractor
 author: Sada\n#9264
 api-version: 1.18
@@ -61,6 +61,10 @@ commands:
   refractor:
     description: Plugin information
     usage: /<command>
+  weather:
+    description: Gets the weather
+    usage: /<command>
+    permission: refractor.weather
 
 
 
