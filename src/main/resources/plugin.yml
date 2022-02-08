@@ -1,5 +1,5 @@
 name: Refractor
-version: 2.5
+version: 2.5.1
 main: company.fourleafclover.Refractor.Refractor
 author: Sada\n#9264
 api-version: 1.18
@@ -65,6 +65,10 @@ commands:
     description: Sends a title to a player
     usage: /<command>
     permission: refractor.title
+  give:
+    description: Give a player an item
+    usage: /<command>
+    permission: refractor.give
 
 
 
