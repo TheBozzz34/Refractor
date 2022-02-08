@@ -11,7 +11,7 @@
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <spring.version>5.3.13</spring.version>
+        <spring.version>5.3.15</spring.version>
         <email.version>1.16.18</email.version>
    </properties>
     <repositories>
@@ -64,13 +64,13 @@
         <dependency>
             <groupId>io.sentry</groupId>
             <artifactId>sentry</artifactId>
-            <version>5.4.3</version>
+            <version>5.5.2</version>
         </dependency>
         <!--slf4j-->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
-            <version>1.7.32</version>
+            <version>1.7.33</version>
         </dependency>
         <!--Spring-->
         <dependency>
@@ -82,7 +82,7 @@
         <dependency>
             <groupId>com.konghq</groupId>
             <artifactId>unirest-java</artifactId>
-            <version>3.13.4</version>
+            <version>3.13.6</version>
             <classifier>standalone</classifier>
         </dependency>
         <!--GSON-->
