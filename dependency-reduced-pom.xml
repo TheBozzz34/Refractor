@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>company.fourleafclover</groupId>
   <artifactId>Refractor</artifactId>
-  <version>2.5.1-SNAPSHOT</version>
+  <version>2.5.2-SNAPSHOT</version>
   <build>
     <plugins>
       <plugin>
@@ -109,7 +109,7 @@
     <email.version>1.16.18</email.version>
     <maven.compiler.target>1.8</maven.compiler.target>
     <maven.compiler.source>1.8</maven.compiler.source>
-    <spring.version>5.3.13</spring.version>
+    <spring.version>5.3.15</spring.version>
   </properties>
 </project>
 
