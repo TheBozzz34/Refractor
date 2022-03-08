@@ -32,7 +32,7 @@ public class onjoin implements Listener {
 
         boolean expansionExists = playerExpansionJar.exists();
 
-        if (expansionExists == false) {
+        if (!expansionExists) {
             logger.error("No PLAYER expansion, notifying server ops");
             for (Player all : Bukkit.getServer().getOnlinePlayers()) {
                 if (all.isOp()) {
