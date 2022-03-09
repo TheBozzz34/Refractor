@@ -13,6 +13,8 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <spring.version>5.3.15</spring.version>
         <email.version>1.16.18</email.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
    </properties>
     <repositories>
         <!-- This adds the Spigot Maven repository to the build -->
