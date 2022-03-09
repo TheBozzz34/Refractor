@@ -15,7 +15,7 @@ public class give implements CommandExecutor {
             return true;
         }
 
-
+//todo Make this actually work
 
         Player player = (Player) sender;
         if (cmd.getName().equalsIgnoreCase("give")) {

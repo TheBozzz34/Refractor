@@ -25,7 +25,7 @@ public class onjoin implements Listener {
     @EventHandler
     // EventHandler to recognize the event.
     public void onPlayerJoin(PlayerJoinEvent event){
-
+        //todo Automatically download the "PLAYER" expansion
         File playerExpansion = Refractor.getPlugin(Refractor.class).getDataFolder().getParentFile();
         File playerExpansionJar = new File(playerExpansion.getPath()+File.separator+"PlaceholderAPI"+File.separator+"expansions"+File.separator+"Expansion-player.jar");
         //File playerExpansion = new File("/PlaceholderAPI/expansions/Expansion-player.jar");
