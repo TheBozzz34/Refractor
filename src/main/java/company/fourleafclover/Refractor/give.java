@@ -14,7 +14,6 @@ public class give implements CommandExecutor {
         if (!(sender instanceof Player)) {
             return true;
         }
-
 //todo Make this actually work
 
         Player player = (Player) sender;
