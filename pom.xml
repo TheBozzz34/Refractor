@@ -11,7 +11,7 @@
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <spring.version>5.3.15</spring.version>
+        <spring.version>5.3.16</spring.version>
         <email.version>1.16.18</email.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -59,20 +59,20 @@
         <dependency>
             <groupId>org.bstats</groupId>
             <artifactId>bstats-bukkit</artifactId>
-            <version>2.2.1</version>
+            <version>3.0.0</version>
             <scope>compile</scope>
           </dependency>
         <!--Sentry.io-->
         <dependency>
             <groupId>io.sentry</groupId>
             <artifactId>sentry</artifactId>
-            <version>5.5.3</version>
+            <version>5.6.1</version>
         </dependency>
         <!--slf4j-->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
-            <version>1.7.35</version>
+            <version>1.7.36</version>
         </dependency>
         <!--Spring-->
         <dependency>
