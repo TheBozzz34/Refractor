@@ -19,5 +19,4 @@ Check the [Spigot Page](https://www.spigotmc.org/resources/refractor.96459/) for
 
 [Progress Tracker](https://trello.com/b/eqeE8VAi/refractor-plugin-issue-tracker#)
 
-
 `String DISCORD = Refractor.getPlugin(Refractor.class).getConfig().getString("discord-link");`
