@@ -10,7 +10,6 @@
 
 A 1.17 plugin currently being developed by [Sada\n#9264](https://discordapp.com/users/457659194535837727), requires PlaceholderAPI.
 
- 
 
 ### I have very little interest in this plugin, development is on hold for now
 
