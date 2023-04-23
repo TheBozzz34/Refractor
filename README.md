@@ -11,11 +11,10 @@
 A 1.17 plugin currently being developed by [Sada\n#9264](https://discordapp.com/users/457659194535837727), requires PlaceholderAPI.
 
 
-### 1.19 update coming soon!
+### Download from the CI server for 1.19 support
 
 
-Check the [Spigot Page](https://www.spigotmc.org/resources/refractor.96459/) for the latest stable release, or the [CI](https://jenkins.catgirlsaresexy.org/job/Refractor%20Plugin/ server for dev builds. 
+Check the [Spigot Page](https://www.spigotmc.org/resources/refractor.96459/) for the latest stable release, or the [CI](https://jenkins.catgirlsaresexy.org/job/Refractor%20Plugin/lastSuccessfulBuild/) for dev builds. 
 
-[Progress Tracker](https://trello.com/b/eqeE8VAi/refractor-plugin-issue-tracker#)
 
 `String DISCORD = Refractor.getPlugin(Refractor.class).getConfig().getString("discord-link");`
