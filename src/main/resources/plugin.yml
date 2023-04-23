@@ -1,14 +1,14 @@
 name: Refractor
-version: 2.5.2
+version: 3.3.2
 main: company.fourleafclover.Refractor.Refractor
 author: Sada\n#9264
-api-version: 1.18
+api-version: 1.19
 description: Just some server essentials
 website: fourleafclover.company
 depend: [PlaceholderAPI]
 commands:
   generror:
-    description: Generate a man-made execption
+    description: Manually create execption
     usage: /<command>
     aliases: create-error
   dsc:

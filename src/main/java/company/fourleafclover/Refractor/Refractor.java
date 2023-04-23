@@ -40,7 +40,7 @@ public class Refractor extends JavaPlugin {
         config.addDefault("bstats", true);
         config.addDefault("sentry-debug", false);
         config.addDefault("discord-link", "Discord Server Invite URL");
-        config.addDefault("version", "2.2.2");
+        config.addDefault("version", "3.3.2");
         config.options().copyDefaults(true);
         saveConfig();
 
