@@ -10,12 +10,11 @@
 
 A 1.17 plugin currently being developed by [Sada\n#9264](https://discordapp.com/users/457659194535837727), requires PlaceholderAPI.
 
- 
 
-### I have very little interest in this plugin, development is on hold for now
+### 1.19 update coming soon!
 
 
-Check the [Spigot Page](https://www.spigotmc.org/resources/refractor.96459/) for the latest stable release, or the [CI](https://fbioc.com/job/Refractor/) server for bleedeing edge builds. 
+Check the [Spigot Page](https://www.spigotmc.org/resources/refractor.96459/) for the latest stable release, or the [CI](https://jenkins.catgirlsaresexy.org/job/Refractor%20Plugin/ server for dev builds. 
 
 [Progress Tracker](https://trello.com/b/eqeE8VAi/refractor-plugin-issue-tracker#)
 
