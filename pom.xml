@@ -29,7 +29,7 @@
             <url>https://m2.dv8tion.net/releases</url>
         </repository>
         <!--PlaceHolderAPI-->
-        <repository>
+       <repository>
             <id>placeholderapi</id>
             <url>https://repo.extendedclip.com/content/repositories/placeholderapi/</url>
         </repository>
@@ -95,11 +95,11 @@
         </dependency>
         <!--PlaceHolderAPI-->
         <dependency>
-            <groupId>me.clip</groupId>
-            <artifactId>placeholderapi</artifactId>
-            <version>2.10.10</version>
-            <scope>provided</scope>
-        </dependency>
+         <groupId>me.clip</groupId>
+          <artifactId>placeholderapi</artifactId>
+          <version>2.11.3</version>
+         <scope>provided</scope>
+        </dependency
         <!--Update Checker-->
         <dependency>
             <groupId>de.jeff_media</groupId>
