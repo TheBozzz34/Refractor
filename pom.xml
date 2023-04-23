@@ -96,10 +96,10 @@
         <!--PlaceHolderAPI-->
         <dependency>
          <groupId>me.clip</groupId>
-          <artifactId>placeholderapi</artifactId>
-          <version>2.11.3</version>
-         <scope>provided</scope>
-        </dependency
+           <artifactId>placeholderapi</artifactId>
+           <version>2.11.3</version>
+           <scope>provided</scope>
+         </dependency>
         <!--Update Checker-->
         <dependency>
             <groupId>de.jeff_media</groupId>
