@@ -8,7 +8,7 @@
 
 ![logo](https://bstats.org/signatures/bukkit/Refractor.svg)
 
-A 1.17 plugin currently being developed by [Sada\n#9264](https://discordapp.com/users/457659194535837727), requires PlaceholderAPI.
+A 1.17 plugin currently being developed by [`_sadan_`](https://discordapp.com/users/457659194535837727), requires PlaceholderAPI.
 
 
 ### Download from the CI server for 1.19 support
