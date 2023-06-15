@@ -84,8 +84,7 @@
         <dependency>
             <groupId>com.konghq</groupId>
             <artifactId>unirest-java</artifactId>
-            <version>3.13.6</version>
-            <classifier>standalone</classifier>
+            <version>4.0.0-RC2</version>          <classifier>standalone</classifier>
         </dependency>
         <!--GSON-->
         <dependency>
