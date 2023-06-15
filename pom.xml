@@ -6,7 +6,7 @@
 
     <groupId>company.fourleafclover</groupId>
     <artifactId>Refractor</artifactId>
-    <version>2.5.2-SNAPSHOT</version>
+    <version>3.3.2-SNAPSHOT</version>
 
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
@@ -29,7 +29,7 @@
             <url>https://m2.dv8tion.net/releases</url>
         </repository>
         <!--PlaceHolderAPI-->
-        <repository>
+       <repository>
             <id>placeholderapi</id>
             <url>https://repo.extendedclip.com/content/repositories/placeholderapi/</url>
         </repository>
@@ -66,7 +66,7 @@
         <dependency>
             <groupId>io.sentry</groupId>
             <artifactId>sentry</artifactId>
-            <version>5.6.1</version>
+            <version>5.6.2</version>
         </dependency>
         <!--slf4j-->
         <dependency>
@@ -95,11 +95,11 @@
         </dependency>
         <!--PlaceHolderAPI-->
         <dependency>
-            <groupId>me.clip</groupId>
-            <artifactId>placeholderapi</artifactId>
-            <version>2.10.10</version>
-            <scope>provided</scope>
-        </dependency>
+         <groupId>me.clip</groupId>
+           <artifactId>placeholderapi</artifactId>
+           <version>2.11.3</version>
+           <scope>provided</scope>
+         </dependency>
         <!--Update Checker-->
         <dependency>
             <groupId>de.jeff_media</groupId>
