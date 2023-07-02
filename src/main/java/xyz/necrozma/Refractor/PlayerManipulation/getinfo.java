@@ -1,4 +1,4 @@
-package xyz.necrozma.Refractor;
+package xyz.necrozma.Refractor.PlayerManipulation;
 
 import me.clip.placeholderapi.PlaceholderAPI;
 import io.sentry.Sentry;
@@ -18,7 +18,6 @@ public class getinfo implements CommandExecutor {
         if (!(sender instanceof Player)) { return true; }
         Player player = (Player) sender;
         Player target = Bukkit.getPlayer(args[0]);
-
 
 
         if(cmd.getName().equalsIgnoreCase("getinfo")) {

@@ -1,14 +1,33 @@
 package xyz.necrozma.Refractor;
 
 import io.sentry.Sentry;
+import me.clip.placeholderapi.PlaceholderAPI;
 import org.bstats.bukkit.Metrics;
+import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.entity.Player;
 import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import xyz.necrozma.Refractor.Events.OnJoin;
+import xyz.necrozma.Refractor.Events.OnQuit;
+import xyz.necrozma.Refractor.Gamemodes.gma;
+import xyz.necrozma.Refractor.Gamemodes.gmc;
+import xyz.necrozma.Refractor.Gamemodes.gms;
+import xyz.necrozma.Refractor.Gamemodes.gmsp;
+import xyz.necrozma.Refractor.PlayerManipulation.feed;
+import xyz.necrozma.Refractor.PlayerManipulation.getinfo;
+import xyz.necrozma.Refractor.PlayerManipulation.give;
+import xyz.necrozma.Refractor.PlayerManipulation.heal;
+import xyz.necrozma.Refractor.WorldManipulation.day;
+import xyz.necrozma.Refractor.WorldManipulation.night;
+import xyz.necrozma.Refractor.WorldManipulation.title;
+
 import java.io.File;
+
+import static org.bukkit.Bukkit.getServer;
 
 
 public class Main extends JavaPlugin {
@@ -65,6 +84,19 @@ public class Main extends JavaPlugin {
             logger.info("Disabling bstats because of config");
         }
 
+        File playerExpansion = getDataFolder().getParentFile();
+        File playerExpansionJar = new File(playerExpansion.getPath()+File.separator+"PlaceholderAPI"+File.separator+"expansions"+File.separator+"Expansion-player.jar");
+        //File playerExpansion = new File("/PlaceholderAPI/expansions/Expansion-player.jar");
+
+        boolean expansionExists = playerExpansionJar.exists();
+
+        if (!expansionExists) {
+            logger.error("No PLAYER expansion, please install the PLAYER expansion from PlaceHolderAPI");
+            logger.error("-----------------------------------------------------");
+            logger.error("You can do so via \"/papi ecloud download player\"");
+
+        }
+
         commands commands = new commands();
 
         try {
@@ -101,7 +133,8 @@ public class Main extends JavaPlugin {
 
     void registerEvents() {
         PluginManager pm = getServer().getPluginManager();
-        pm.registerEvents(new onjoin(),  this);
+        pm.registerEvents(new OnJoin(),  this);
+        pm.registerEvents(new OnQuit(), this);
     }
 
 }

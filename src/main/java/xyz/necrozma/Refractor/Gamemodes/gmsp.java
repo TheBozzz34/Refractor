@@ -1,4 +1,4 @@
-package xyz.necrozma.Refractor;
+package xyz.necrozma.Refractor.Gamemodes;
 
 import org.bukkit.ChatColor;
 import org.bukkit.GameMode;
@@ -7,7 +7,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-public class gms implements CommandExecutor {
+public class gmsp implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if (!(sender instanceof Player)) { return true; }
@@ -15,9 +15,9 @@ public class gms implements CommandExecutor {
 
 
 
-        if(cmd.getName().equalsIgnoreCase("gms")) {
-            player.setGameMode(GameMode.SURVIVAL);
-            player.sendMessage(ChatColor.GOLD + "Set Gamemode to Survival!");
+        if(cmd.getName().equalsIgnoreCase("gmsp")) {
+            player.setGameMode(GameMode.SPECTATOR);
+            player.sendMessage(ChatColor.GOLD + "Set Gamemode to Spectator!");
         }
 
 

@@ -1,4 +1,4 @@
-package xyz.necrozma.Refractor;
+package xyz.necrozma.Refractor.PlayerManipulation;
 
 import io.sentry.Sentry;
 import org.bukkit.ChatColor;
