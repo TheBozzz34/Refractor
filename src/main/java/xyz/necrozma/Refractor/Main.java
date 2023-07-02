@@ -17,15 +17,20 @@ import xyz.necrozma.Refractor.Gamemodes.gma;
 import xyz.necrozma.Refractor.Gamemodes.gmc;
 import xyz.necrozma.Refractor.Gamemodes.gms;
 import xyz.necrozma.Refractor.Gamemodes.gmsp;
+import xyz.necrozma.Refractor.Moderation.Ban;
 import xyz.necrozma.Refractor.PlayerManipulation.feed;
 import xyz.necrozma.Refractor.PlayerManipulation.getinfo;
 import xyz.necrozma.Refractor.PlayerManipulation.give;
 import xyz.necrozma.Refractor.PlayerManipulation.heal;
+import xyz.necrozma.Refractor.Utilities.Database;
 import xyz.necrozma.Refractor.WorldManipulation.day;
 import xyz.necrozma.Refractor.WorldManipulation.night;
 import xyz.necrozma.Refractor.WorldManipulation.title;
 
 import java.io.File;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 import static org.bukkit.Bukkit.getServer;
 
@@ -33,14 +38,20 @@ import static org.bukkit.Bukkit.getServer;
 public class Main extends JavaPlugin {
 
     public static Main plugin;
-
     public PluginDescriptionFile pdf;
+    Logger logger = LoggerFactory.getLogger(Main.class);
+
+    String jdbcDriver = this.getConfig().getString("mysql-driver");
+    String dbUrl = this.getConfig().getString("mysql-url");
+    String username = this.getConfig().getString("mysql-username");
+    String password = this.getConfig().getString("mysql-password");
+    public static Database database;
+
 
     @Override
     public void onEnable() {
 
         plugin = this;
-        Logger logger = LoggerFactory.getLogger(Main.class);
 
         try {
             if (!getDataFolder().exists()) {
@@ -62,6 +73,10 @@ public class Main extends JavaPlugin {
         config.addDefault("bstats", true);
         config.addDefault("sentry-debug", false);
         config.addDefault("discord-link", "Discord Server Invite URL");
+        config.addDefault("mysql-driver", "com.mysql.cj.jdbc.Driver  # DO NOT CHANGE UNLESS YOU KNOW WHAT YOU ARE DOING");
+        config.addDefault("mysql-url", "jdbc:mysql://localhost:3306/mydatabase");
+        config.addDefault("mysql-username", "your-username");
+        config.addDefault("mysql-password", "your-password");
         config.options().copyDefaults(true);
         saveConfig();
 
@@ -74,6 +89,17 @@ public class Main extends JavaPlugin {
             // Set to true for init messages
             options.setDebug(config.getBoolean("sentry-debug"));
         });
+
+        Connection connection = null;
+
+        try {
+            database = new Database(jdbcDriver, dbUrl, username, password);
+            database.connect();
+            connection = database.getConnection();
+        } catch (Exception e) {
+            Sentry.captureException(e);
+            e.printStackTrace();
+        }
 
 
         if (config.getBoolean("bstats")) {
@@ -115,6 +141,7 @@ public class Main extends JavaPlugin {
             getCommand("refractor").setExecutor(new info());;
             getCommand("title").setExecutor(new title());
             getCommand("give").setExecutor(new give());
+            getCommand("Ban").setExecutor(new Ban());
             logger.info("Successfully Loaded Commands");
 
         } catch (Exception e) {
@@ -128,6 +155,39 @@ public class Main extends JavaPlugin {
             e.printStackTrace();
             Sentry.captureException(e);
         }
+
+        logger.info("Running Database Tasks");
+        try {
+            if (connection != null) {
+                try (Statement statement = connection.createStatement()) {
+                    String createTableQuery = "CREATE TABLE IF NOT EXISTS player_bans ("
+                            + "id INT PRIMARY KEY AUTO_INCREMENT,"
+                            + "player_name VARCHAR(255) NOT NULL,"
+                            + "ban_reason VARCHAR(255) NOT NULL,"
+                            + "ban_duration INT NOT NULL,"
+                            + "ban_timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP"
+                            + ") COLLATE=utf8_general_ci";
+                    statement.executeUpdate(createTableQuery);
+                    logger.info("Tasks queried successfully!");
+                } catch (SQLException e) {
+                    logger.error("Failed to create table 'player_bans'. Error: " + e.getMessage());
+                    e.printStackTrace();
+                }
+            } else {
+                logger.error("Failed to establish a database connection.");
+            }
+
+
+        } catch (Exception e) {
+            Sentry.captureException(e);
+            e.printStackTrace();
+        }
+
+    }
+
+    public void onDisable() {
+        logger.info("Shutting down database connection");
+        database.disconnect();
 
     }
 
