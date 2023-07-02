@@ -162,9 +162,8 @@ public class Main extends JavaPlugin {
                 try (Statement statement = connection.createStatement()) {
                     String createTableQuery = "CREATE TABLE IF NOT EXISTS player_bans ("
                             + "id INT PRIMARY KEY AUTO_INCREMENT,"
-                            + "player_name VARCHAR(255) NOT NULL,"
+                            + "player_uuid VARCHAR(255) NOT NULL,"
                             + "ban_reason VARCHAR(255) NOT NULL,"
-                            + "ban_duration INT NOT NULL,"
                             + "ban_timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP"
                             + ") COLLATE=utf8_general_ci";
                     statement.executeUpdate(createTableQuery);
