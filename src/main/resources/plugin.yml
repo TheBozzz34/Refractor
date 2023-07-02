@@ -1,10 +1,10 @@
 name: Refractor
 version: 3.3.2
-main: company.fourleafclover.Refractor.Refractor
-author: Sada\n#9264
-api-version: 1.19
+main: xyz.necrozma.Refractor.Main
+author: Necrozma
+api-version: '1.20'
 description: Just some server essentials
-website: fourleafclover.company
+website: necrozma.xyz
 depend: [PlaceholderAPI]
 commands:
   generror:

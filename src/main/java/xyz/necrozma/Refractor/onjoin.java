@@ -1,11 +1,9 @@
-package company.fourleafclover.Refractor;
+package xyz.necrozma.Refractor;
 
 
-import io.sentry.Sentry;
 import me.clip.placeholderapi.PlaceholderAPI;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
-import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -26,7 +24,7 @@ public class onjoin implements Listener {
     // EventHandler to recognize the event.
     public void onPlayerJoin(PlayerJoinEvent event){
         //todo Automatically download the "PLAYER" expansion
-        File playerExpansion = Refractor.getPlugin(Refractor.class).getDataFolder().getParentFile();
+        File playerExpansion = Main.getPlugin(Main.class).getDataFolder().getParentFile();
         File playerExpansionJar = new File(playerExpansion.getPath()+File.separator+"PlaceholderAPI"+File.separator+"expansions"+File.separator+"Expansion-player.jar");
         //File playerExpansion = new File("/PlaceholderAPI/expansions/Expansion-player.jar");
 

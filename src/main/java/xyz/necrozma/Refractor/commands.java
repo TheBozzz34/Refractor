@@ -1,4 +1,4 @@
-package company.fourleafclover.Refractor;
+package xyz.necrozma.Refractor;
 
 import java.lang.Exception;
 import io.sentry.Sentry;

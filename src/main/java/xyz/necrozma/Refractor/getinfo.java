@@ -1,4 +1,4 @@
-package company.fourleafclover.Refractor;
+package xyz.necrozma.Refractor;
 
 import me.clip.placeholderapi.PlaceholderAPI;
 import io.sentry.Sentry;

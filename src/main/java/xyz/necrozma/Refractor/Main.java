@@ -1,6 +1,5 @@
-package company.fourleafclover.Refractor;
+package xyz.necrozma.Refractor;
 
-import de.jeff_media.updatechecker.UpdateChecker;
 import io.sentry.Sentry;
 import org.bstats.bukkit.Metrics;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -11,15 +10,15 @@ import org.slf4j.LoggerFactory;
 import java.io.File;
 
 
-public class Refractor extends JavaPlugin {
+public class Main extends JavaPlugin {
 
-    public static Refractor plugin;
+    public static Main plugin;
 
     @Override
     public void onEnable() {
 
         plugin = this;
-        Logger logger = LoggerFactory.getLogger(Refractor.class);
+        Logger logger = LoggerFactory.getLogger(Main.class);
                 try {
             if (!getDataFolder().exists()) {
                 getDataFolder().mkdirs();
@@ -40,7 +39,6 @@ public class Refractor extends JavaPlugin {
         config.addDefault("bstats", true);
         config.addDefault("sentry-debug", false);
         config.addDefault("discord-link", "Discord Server Invite URL");
-        config.addDefault("version", "3.3.2");
         config.options().copyDefaults(true);
         saveConfig();
 
@@ -50,16 +48,7 @@ public class Refractor extends JavaPlugin {
             // Set to true for init messages
             options.setDebug(config.getBoolean("sentry-debug"));
         });
-        
-        try {
-            UpdateChecker.init(this, 96459)
-                    .checkEveryXHours(24) // Check every 24 hours
-                    .checkNow(); // And check right now
 
-        } catch (Exception e) {
-            e.printStackTrace();
-            Sentry.captureException(e);
-        }
 
         registerEvents();
 

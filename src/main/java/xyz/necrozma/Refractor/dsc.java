@@ -1,7 +1,5 @@
-package company.fourleafclover.Refractor;
+package xyz.necrozma.Refractor;
 
-import java.lang.Exception;
-import io.sentry.Sentry;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -19,7 +17,7 @@ public class dsc implements CommandExecutor {
 
 
         if(cmd.getName().equalsIgnoreCase("dsc")) {
-            String DISCORD = Refractor.getPlugin(Refractor.class).getConfig().getString("discord-link");
+            String DISCORD = Main.getPlugin(Main.class).getConfig().getString("discord-link");
             player.sendMessage(ChatColor.GREEN + "Join our discord at " + DISCORD);
 
         }

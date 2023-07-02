@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>company.fourleafclover</groupId>
+  <groupId>xyz.necrozma</groupId>
   <artifactId>Refractor</artifactId>
   <version>3.3.2-SNAPSHOT</version>
   <build>
@@ -21,11 +21,11 @@
           <relocations>
             <relocation>
               <pattern>org.bstats</pattern>
-              <shadedPattern>company.fourleafclover.Refractor</shadedPattern>
+              <shadedPattern>xyz.necrozma.Refractor</shadedPattern>
             </relocation>
             <relocation>
               <pattern>de.jeff_media.updatechecker</pattern>
-              <shadedPattern>company.fourleafclover.updatechecker</shadedPattern>
+              <shadedPattern>xyz.necrozma.updatechecker</shadedPattern>
             </relocation>
           </relocations>
         </configuration>
@@ -113,7 +113,7 @@
     <email.version>1.16.18</email.version>
     <maven.compiler.target>1.8</maven.compiler.target>
     <maven.compiler.source>1.8</maven.compiler.source>
-    <spring.version>5.3.17</spring.version>
+    <spring.version>5.3.27</spring.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
   </properties>
