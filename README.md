@@ -11,10 +11,10 @@
 A 1.17 plugin currently being developed by [`_sadan_`](https://discordapp.com/users/457659194535837727), requires PlaceholderAPI.
 
 
-### Download from the CI server for 1.19 support
+### Now supports 1.20!
 
 
-Check the [Spigot Page](https://www.spigotmc.org/resources/refractor.96459/) for the latest stable release, or the [CI](https://jenkins.catgirlsaresexy.org/job/Refractor%20Plugin/lastSuccessfulBuild/) for dev builds. 
+View latest builds in the [Actions](https://github.com/TheBozzz34/Refractor/actions/workflows/maven.yml)
 
 
 `String DISCORD = Refractor.getPlugin(Refractor.class).getConfig().getString("discord-link");`
