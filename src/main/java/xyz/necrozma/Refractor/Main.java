@@ -3,6 +3,7 @@ package xyz.necrozma.Refractor;
 import io.sentry.Sentry;
 import org.bstats.bukkit.Metrics;
 import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.slf4j.Logger;
@@ -14,12 +15,15 @@ public class Main extends JavaPlugin {
 
     public static Main plugin;
 
+    public PluginDescriptionFile pdf;
+
     @Override
     public void onEnable() {
 
         plugin = this;
         Logger logger = LoggerFactory.getLogger(Main.class);
-                try {
+
+        try {
             if (!getDataFolder().exists()) {
                 getDataFolder().mkdirs();
             }
@@ -42,6 +46,9 @@ public class Main extends JavaPlugin {
         config.options().copyDefaults(true);
         saveConfig();
 
+
+        pdf = this.getDescription();
+
         Sentry.init(options -> {
             options.setDsn("https://438653d78f4044eabce86bfac30ec13b@o561860.ingest.sentry.io/5904137");
             options.setTracesSampleRate(1.0);
@@ -49,8 +56,6 @@ public class Main extends JavaPlugin {
             options.setDebug(config.getBoolean("sentry-debug"));
         });
 
-
-        registerEvents();
 
         if (config.getBoolean("bstats")) {
             int pluginId = 12406;
@@ -85,13 +90,19 @@ public class Main extends JavaPlugin {
             Sentry.captureException(e);
         }
 
+        try {
+            registerEvents();
+        } catch(Exception e) {
+            e.printStackTrace();
+            Sentry.captureException(e);
+        }
+
     }
 
-    public void registerEvents(){
+    void registerEvents() {
         PluginManager pm = getServer().getPluginManager();
         pm.registerEvents(new onjoin(),  this);
     }
-
 
 }
 

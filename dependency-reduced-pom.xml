@@ -23,10 +23,6 @@
               <pattern>org.bstats</pattern>
               <shadedPattern>xyz.necrozma.Refractor</shadedPattern>
             </relocation>
-            <relocation>
-              <pattern>de.jeff_media.updatechecker</pattern>
-              <shadedPattern>xyz.necrozma.updatechecker</shadedPattern>
-            </relocation>
           </relocations>
         </configuration>
       </plugin>
@@ -45,10 +41,6 @@
     <repository>
       <id>placeholderapi</id>
       <url>https://repo.extendedclip.com/content/repositories/placeholderapi/</url>
-    </repository>
-    <repository>
-      <id>jeff-media-public</id>
-      <url>https://hub.jeff-media.com/nexus/repository/jeff-media-public/</url>
     </repository>
     <repository>
       <id>jitpack.io</id>
@@ -110,7 +102,6 @@
     </dependency>
   </dependencies>
   <properties>
-    <email.version>1.16.18</email.version>
     <maven.compiler.target>1.8</maven.compiler.target>
     <maven.compiler.source>1.8</maven.compiler.source>
     <spring.version>5.3.27</spring.version>
