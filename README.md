@@ -8,7 +8,7 @@
 
 ![logo](https://bstats.org/signatures/bukkit/Refractor.svg)
 
-A 1.20 plugin currently being developed by [`_sadan_`](https://discordapp.com/users/457659194535837727), requires PlaceholderAPI.
+A 1.20 plugin currently being developed by [`_sadan_`](https://discordapp.com/users/457659194535837727), requires PlaceholderAPI and ProtocolLib.
 
 
 ### [Now on Modrinth!](https://modrinth.com/plugin/refractor)
