@@ -11,7 +11,7 @@
 A 1.20 plugin currently being developed by [`_sadan_`](https://discordapp.com/users/457659194535837727), requires PlaceholderAPI.
 
 
-### Now supports 1.20!
+### [Now on Modrinth!](https://modrinth.com/plugin/refractor)
 
 
 View latest builds in the [Actions](https://github.com/TheBozzz34/Refractor/actions/workflows/maven.yml)
