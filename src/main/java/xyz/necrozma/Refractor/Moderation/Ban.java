@@ -2,6 +2,9 @@ package xyz.necrozma.Refractor.Moderation;
 
 
 import io.sentry.Sentry;
+import kong.unirest.HttpResponse;
+import kong.unirest.JsonNode;
+import kong.unirest.Unirest;
 import org.bukkit.ChatColor;
 import org.bukkit.GameMode;
 import org.bukkit.command.Command;
@@ -18,6 +21,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Objects;
 import java.util.UUID;
 
 import static xyz.necrozma.Refractor.Main.database;
@@ -36,21 +40,42 @@ public class Ban implements CommandExecutor {
                 player.sendMessage("Usage: /ban <player> [optional reason]");
                 return true;
             }
-                Player target = player.getServer().getPlayer(args[0]);
-            assert target != null;
-            String target_uuid_string = target.getUniqueId().toString();
-                String ban_reason;
+            HttpResponse<JsonNode> httpResponse = Unirest.get("https://api.mojang.com/users/profiles/minecraft/" + args[0])
+                    .header("accept", "application/json")
+                    .header("User-Agent", "Refractor Plugin, Contact me at necrozma@catgirlsaresexy.org")
+                    .asJson();
 
-                if (args.length == 2 ) {
-                    ban_reason = args[1];
-                } else {
-                    ban_reason = "Unspecified";
+            int status = httpResponse.getStatus();
+            String target_uuid_string = null;
+            if (status == 400 || status == 204) {
+                sender.sendMessage(ChatColor.YELLOW + "Player not found or does not exist");
+            } else {
+                JsonNode responseBody = httpResponse.getBody();
+                String UUID = responseBody.getObject().getString("id");
+                if (Objects.equals(UUID, "0232e740c30340a2b170d689eb4c62b3")) {
+                    sender.sendMessage(ChatColor.DARK_RED + "(╯°□°)╯︵ ┻━┻, You didn't say the magic word!");
+                    return true;
                 }
+                target_uuid_string = UUID;
+                logger.info("Banning UUID: " + UUID);
 
+            };
+            String ban_reason;
 
-            target.kickPlayer(ChatColor.RED + "You have been banned for " + ban_reason);
-            // player.sendMessage(ChatColor.RED + "Banning UUID: " + target_uuid_string + " For: " + ban_reason);
+            if (args.length == 2 ) {
+                ban_reason = args[1];
+            } else {
+                ban_reason = "Unspecified";
+            }
+
             savePlayerBanData(target_uuid_string, ban_reason, player);
+
+            Player target = sender.getServer().getPlayer(args[0]);
+            if(target != null) {
+                target.kickPlayer(ChatColor.RED + "You have been banned for " + ban_reason);
+            }
+            // player.sendMessage(ChatColor.RED + "Banning UUID: " + target_uuid_string + " For: " + ban_reason);
+
 
         }
 

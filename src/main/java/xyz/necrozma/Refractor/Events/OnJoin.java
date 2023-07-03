@@ -18,15 +18,13 @@ import java.sql.Connection;
 public class OnJoin implements Listener {
     Logger logger = LoggerFactory.getLogger(OnJoin.class);
 
-
-
-
     @EventHandler
     // EventHandler to recognize the event.
     public void onPlayerJoin(PlayerJoinEvent event){
         // todo Automatically download the "PLAYER" expansion
         Player player = event.getPlayer();
         String playerUUID = player.getUniqueId().toString();
+        playerUUID = playerUUID.replaceAll("-", "");
 
         if (database.isPlayerBanned(playerUUID)) {
             player.kickPlayer(ChatColor.RED + "You are banned from this server.");

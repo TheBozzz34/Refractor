@@ -1,5 +1,5 @@
 name: Refractor
-version: 4
+version: 4.1
 main: xyz.necrozma.Refractor.Main
 author: Necrozma
 api-version: '1.20'
@@ -73,6 +73,11 @@ commands:
     description: Ban a player
     usage: /<command>
     permission: refractor.ban
+  unban:
+    description: Unban a player
+    usage: /<command>
+    permission: refractor.unban
+
 
 
 

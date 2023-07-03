@@ -6,7 +6,7 @@
 
     <groupId>xyz.necrozma</groupId>
     <artifactId>Refractor</artifactId>
-    <version>4-SNAPSHOT</version>
+    <version>4.1-SNAPSHOT</version>
 
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>

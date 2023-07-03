@@ -25,6 +25,7 @@ import xyz.necrozma.Refractor.Gamemodes.gmc;
 import xyz.necrozma.Refractor.Gamemodes.gms;
 import xyz.necrozma.Refractor.Gamemodes.gmsp;
 import xyz.necrozma.Refractor.Moderation.Ban;
+import xyz.necrozma.Refractor.Moderation.UnBan;
 import xyz.necrozma.Refractor.PlayerManipulation.feed;
 import xyz.necrozma.Refractor.PlayerManipulation.getinfo;
 import xyz.necrozma.Refractor.PlayerManipulation.give;
@@ -126,7 +127,8 @@ public class Main extends JavaPlugin {
             getCommand("refractor").setExecutor(new info());;
             getCommand("title").setExecutor(new title());
             getCommand("give").setExecutor(new give());
-            getCommand("Ban").setExecutor(new Ban());
+            getCommand("ban").setExecutor(new Ban());
+            getCommand("unban").setExecutor(new UnBan());
             logger.info("Successfully Loaded Commands");
 
         } catch (Exception e) {
