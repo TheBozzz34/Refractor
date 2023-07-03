@@ -7,8 +7,7 @@ import dev.dejvokep.boostedyaml.settings.dumper.DumperSettings;
 import dev.dejvokep.boostedyaml.settings.general.GeneralSettings;
 import dev.dejvokep.boostedyaml.settings.loader.LoaderSettings;
 import dev.dejvokep.boostedyaml.settings.updater.UpdaterSettings;
-import io.sentry.Sentry;
-import xyz.necrozma.Refractor.Main;
+import xyz.necrozma.Refractor.Refractor;
 
 import java.io.File;
 import java.io.IOException;
@@ -19,8 +18,8 @@ public class Config {
 
     private Config() throws IOException {
         config = YamlDocument.create(
-                new File(Main.getPlugin(Main.class).getDataFolder(), "config.yml"),
-                Main.getPlugin(Main.class).getResource("config.yml"),
+                new File(Refractor.getPlugin(Refractor.class).getDataFolder(), "config.yml"),
+                Refractor.getPlugin(Refractor.class).getResource("config.yml"),
                 GeneralSettings.DEFAULT,
                 LoaderSettings.builder().setAutoUpdate(true).build(),
                 DumperSettings.DEFAULT,

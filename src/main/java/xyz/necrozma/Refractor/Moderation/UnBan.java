@@ -1,26 +1,25 @@
 package xyz.necrozma.Refractor.Moderation;
 
-import com.google.gson.Gson;
 import io.sentry.Sentry;
-import kong.unirest.HttpResponse;
-import kong.unirest.JsonNode;
-import kong.unirest.Unirest;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-import org.bukkit.entity.Player;
+import org.bukkit.permissions.PermissionDefault;
+import org.bukkit.plugin.java.annotation.permission.Permission;
 import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import xyz.necrozma.Refractor.Events.OnJoin;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-import static xyz.necrozma.Refractor.Main.database;
-import static  xyz.necrozma.Refractor.Main.playerUtils;
+import static xyz.necrozma.Refractor.Refractor.database;
+import static  xyz.necrozma.Refractor.Refractor.playerUtils;
+
+@Permission(name = "refractor.unban", desc = "Allows unban command", defaultValue = PermissionDefault.OP)
+@org.bukkit.plugin.java.annotation.command.Command(name = "unban", desc = "Unbans a player", permission = "refractor.unban", permissionMessage = "You do not have permission to use this command!", usage = "/<command> [target player]")
 public class UnBan implements CommandExecutor {
     Logger logger = LoggerFactory.getLogger(UnBan.class);
     @Override

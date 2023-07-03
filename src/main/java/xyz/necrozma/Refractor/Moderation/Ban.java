@@ -2,15 +2,13 @@ package xyz.necrozma.Refractor.Moderation;
 
 
 import io.sentry.Sentry;
-import kong.unirest.HttpResponse;
-import kong.unirest.JsonNode;
-import kong.unirest.Unirest;
 import org.bukkit.ChatColor;
-import org.bukkit.GameMode;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.permissions.PermissionDefault;
+import org.bukkit.plugin.java.annotation.permission.Permission;
 import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,12 +19,11 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Objects;
-import java.util.UUID;
 
-import static xyz.necrozma.Refractor.Main.database;
-import static  xyz.necrozma.Refractor.Main.playerUtils;
-
+import static xyz.necrozma.Refractor.Refractor.database;
+import static  xyz.necrozma.Refractor.Refractor.playerUtils;
+@Permission(name = "refractor.ban", desc = "Allows ban command", defaultValue = PermissionDefault.OP)
+@org.bukkit.plugin.java.annotation.command.Command(name = "ban", desc = "Bans a player", permission = "refractor.ban", permissionMessage = "You do not have permission to use this command!", usage = "/<command> [target player] (reason)")
 public class Ban implements CommandExecutor {
     Logger logger = LoggerFactory.getLogger(Ban.class);
 

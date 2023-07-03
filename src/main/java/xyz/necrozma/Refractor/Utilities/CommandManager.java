@@ -50,7 +50,7 @@ public class CommandManager {
             setCommandExecutor("getinfo", new getinfo());
             setCommandExecutor("refractor", new info());
             setCommandExecutor("title", new title());
-            setCommandExecutor("give", new give());
+            // setCommandExecutor("give", new give());
             setCommandExecutor("ban", new Ban());
             setCommandExecutor("unban", new UnBan());
             setCommandExecutor("unmute", new Unmute());

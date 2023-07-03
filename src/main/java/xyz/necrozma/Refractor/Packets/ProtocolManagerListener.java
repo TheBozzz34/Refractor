@@ -12,11 +12,8 @@ import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import xyz.necrozma.Refractor.Main;
 
-import java.util.Objects;
-
-import static xyz.necrozma.Refractor.Main.database;
+import static xyz.necrozma.Refractor.Refractor.database;
 
 public class ProtocolManagerListener {
 

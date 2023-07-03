@@ -1,7 +1,6 @@
 package xyz.necrozma.Refractor.Events;
 
 
-import io.sentry.Sentry;
 import me.clip.placeholderapi.PlaceholderAPI;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
@@ -10,10 +9,8 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import xyz.necrozma.Refractor.Utilities.Database;
-import static xyz.necrozma.Refractor.Main.database;
 
-import java.sql.Connection;
+import static xyz.necrozma.Refractor.Refractor.database;
 
 public class OnJoin implements Listener {
     Logger logger = LoggerFactory.getLogger(OnJoin.class);

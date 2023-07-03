@@ -8,12 +8,15 @@ import io.sentry.Sentry;
 
 import org.bstats.bukkit.Metrics;
 
-import org.bukkit.Bukkit;
-import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import org.bukkit.plugin.java.annotation.dependency.Dependency;
+import org.bukkit.plugin.java.annotation.plugin.Description;
+import org.bukkit.plugin.java.annotation.plugin.Plugin;
+import org.bukkit.plugin.java.annotation.plugin.Website;
+import org.bukkit.plugin.java.annotation.plugin.author.Author;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -26,15 +29,18 @@ import xyz.necrozma.Refractor.Utilities.Config;
 import xyz.necrozma.Refractor.Utilities.Database;
 import xyz.necrozma.Refractor.Utilities.PlayerUtils;
 
-import java.io.File;
-import java.sql.Connection;
 
+@Plugin(name="Refractor", version="4.2")
+@Description(value = "A simple, human-friendly plugin to ease server administration")
+@Author(value = "Necrozma")
+@Website(value = "necrozma.xyz")
+@Dependency(value = "PlaceholderAPI")
+@Dependency(value = "ProtocolLib")
+public class Refractor extends JavaPlugin {
 
-public class Main extends JavaPlugin {
-
-    public static Main plugin;
+    public static Refractor plugin;
     public PluginDescriptionFile pdf;
-    Logger logger = LoggerFactory.getLogger(Main.class);
+    Logger logger = LoggerFactory.getLogger(Refractor.class);
 
     public static Database database;
     public static PlayerUtils playerUtils = new PlayerUtils();
