@@ -30,8 +30,7 @@ public class OnJoin implements Listener {
             player.kickPlayer(ChatColor.RED + "You are banned from this server.");
             return;
         }
-
-
+        
         String joinText = ChatColor.AQUA + "Welcome to the server, %player_name%!";
         joinText = PlaceholderAPI.setPlaceholders(event.getPlayer(), joinText);
         event.setJoinMessage(joinText);

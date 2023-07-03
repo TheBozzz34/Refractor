@@ -5,6 +5,7 @@ import io.sentry.Sentry;
 import kong.unirest.HttpResponse;
 import kong.unirest.JsonNode;
 import kong.unirest.Unirest;
+import net.kyori.adventure.platform.facet.Facet;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -14,6 +15,8 @@ import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import xyz.necrozma.Refractor.Events.OnJoin;
+import xyz.necrozma.Refractor.Main;
+import xyz.necrozma.Refractor.Utilities.PlayerUtils;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -21,42 +24,40 @@ import java.sql.SQLException;
 
 import static xyz.necrozma.Refractor.Main.database;
 import static  xyz.necrozma.Refractor.Main.playerUtils;
-public class UnBan implements CommandExecutor {
-    Logger logger = LoggerFactory.getLogger(UnBan.class);
+
+public class Unmute implements CommandExecutor {
+    Logger logger = LoggerFactory.getLogger(Unmute.class);
     @Override
     public boolean onCommand(@NotNull CommandSender commandSender, @NotNull Command command, @NotNull String s, @NotNull String[] args) {
-        if (command.getName().equalsIgnoreCase("unban")) {
+        if (command.getName().equalsIgnoreCase("unmute")) {
             if (args.length == 0) {
-                commandSender.sendMessage("Usage: /unban <Player>");
+                commandSender.sendMessage("Usage: /unmute <Player>");
                 return true;
             }
 
             if (args.length > 1) {
-                commandSender.sendMessage("Usage: /unban <Player>");
+                commandSender.sendMessage("Usage: /unmute <Player>");
                 return true;
             }
-
-
             String UUID = playerUtils.UUIDFromStringName(args[0], commandSender);
-            logger.info("Unbanning UUID: " + UUID);
-            boolean success = deletePlayerBanData(UUID);
+            Boolean success = deletePlayerMuteData(UUID);
             if (success) {
-                commandSender.sendMessage(ChatColor.GREEN + "Player " + UUID + " unbanned successfully!");
+                commandSender.sendMessage(ChatColor.GREEN + "Unmuted player!");
             } else {
-                commandSender.sendMessage(ChatColor.YELLOW + "Player ban data not found or failed to delete.");
+                commandSender.sendMessage(ChatColor.RED + "Unable to unmute player!");
             }
 
 
         }
         return true;
     }
-    public boolean deletePlayerBanData(String playerUUID) {
+    public boolean deletePlayerMuteData(String playerUUID) {
         Connection connection = null;
         boolean success = false;
 
         try {
             connection = database.getConnection();
-            String deleteQuery = "DELETE FROM player_bans WHERE player_uuid = ?";
+            String deleteQuery = "DELETE FROM player_mutes WHERE player_uuid = ?";
             PreparedStatement preparedStatement = connection.prepareStatement(deleteQuery);
             preparedStatement.setString(1, playerUUID);
 

@@ -13,8 +13,6 @@ public class gmsp implements CommandExecutor {
         if (!(sender instanceof Player)) { return true; }
         Player player = (Player) sender;
 
-
-
         if(cmd.getName().equalsIgnoreCase("gmsp")) {
             player.setGameMode(GameMode.SPECTATOR);
             player.sendMessage(ChatColor.GOLD + "Set Gamemode to Spectator!");

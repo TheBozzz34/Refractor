@@ -5,7 +5,7 @@ author: Necrozma
 api-version: '1.20'
 description: Just some server essentials
 website: necrozma.xyz
-depend: [PlaceholderAPI]
+depend: [PlaceholderAPI, ProtocolLib]
 commands:
   generror:
     description: Manually create execption
@@ -77,7 +77,14 @@ commands:
     description: Unban a player
     usage: /<command>
     permission: refractor.unban
-
+  mute:
+    description: Mute a player
+    usage: /<command>
+    permission: refractor.mute
+  unmute:
+    description: Unute a player
+    usage: /<command>
+    permission: refractor.unmute
 
 
 
