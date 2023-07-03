@@ -1,14 +1,15 @@
 package xyz.necrozma.Refractor;
 
 
-import com.comphenix.protocol.ProtocolLibrary;
-import com.comphenix.protocol.ProtocolManager;
+
 import dev.dejvokep.boostedyaml.route.Route;
 
 import io.sentry.Sentry;
 
 import org.bstats.bukkit.Metrics;
 
+import org.bukkit.Bukkit;
+import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -18,6 +19,7 @@ import org.slf4j.LoggerFactory;
 
 import xyz.necrozma.Refractor.Events.OnJoin;
 import xyz.necrozma.Refractor.Events.OnQuit;
+import xyz.necrozma.Refractor.Events.OnServerLoad;
 import xyz.necrozma.Refractor.Packets.ProtocolManagerListener;
 import xyz.necrozma.Refractor.Utilities.CommandManager;
 import xyz.necrozma.Refractor.Utilities.Config;
@@ -26,17 +28,16 @@ import xyz.necrozma.Refractor.Utilities.PlayerUtils;
 
 import java.io.File;
 import java.sql.Connection;
-import java.sql.SQLException;
-import java.sql.Statement;
+
 
 public class Main extends JavaPlugin {
 
     public static Main plugin;
     public PluginDescriptionFile pdf;
     Logger logger = LoggerFactory.getLogger(Main.class);
+
     public static Database database;
     public static PlayerUtils playerUtils = new PlayerUtils();
-    private CommandManager commandManager;
 
 
     @Override
@@ -61,12 +62,10 @@ public class Main extends JavaPlugin {
         String username = configManager.getString(Route.from("mysql-username"));
         String password = configManager.getString(Route.from("mysql-password"));
 
-        Connection connection = null;
 
         try {
             database = new Database(jdbcDriver, dbUrl, username, password);
             database.connect();
-            connection = database.getConnection();
         } catch (Exception e) {
             Sentry.captureException(e);
             e.printStackTrace();
@@ -80,21 +79,6 @@ public class Main extends JavaPlugin {
             logger.info("Disabling bstats because of config");
         }
 
-        File playerExpansion = getDataFolder().getParentFile();
-        File playerExpansionJar = new File(playerExpansion.getPath()+File.separator+"PlaceholderAPI"+File.separator+"expansions"+File.separator+"Expansion-player.jar");
-        //File playerExpansion = new File("/PlaceholderAPI/expansions/Expansion-player.jar");
-
-        boolean expansionExists = playerExpansionJar.exists();
-
-        if (!expansionExists) {
-            logger.error("No PLAYER expansion, please install the PLAYER expansion from PlaceHolderAPI");
-            logger.error("-----------------------------------------------------");
-            logger.error("You can do so via \"/papi ecloud download player\"");
-
-        }
-
-        commandManager = new CommandManager(this);
-        commandManager.registerCommands();
 
         try {
             registerEvents();
@@ -103,8 +87,12 @@ public class Main extends JavaPlugin {
             Sentry.captureException(e);
         }
 
-        database.RunQueries();
 
+        CommandManager commandManager = new CommandManager(this);
+        commandManager.registerCommands();
+
+
+        database.RunQueries();
         ProtocolManagerListener.initialize(this);
 
     }
@@ -119,6 +107,7 @@ public class Main extends JavaPlugin {
         PluginManager pm = getServer().getPluginManager();
         pm.registerEvents(new OnJoin(),  this);
         pm.registerEvents(new OnQuit(), this);
+        pm.registerEvents(new OnServerLoad(), this);
     }
 
 }

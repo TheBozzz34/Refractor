@@ -4,6 +4,8 @@ import io.sentry.Sentry;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.PluginCommand;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import xyz.necrozma.Refractor.dadjoke;
 import xyz.necrozma.Refractor.dsc;
 import xyz.necrozma.Refractor.Gamemodes.gma;
@@ -23,10 +25,11 @@ import xyz.necrozma.Refractor.WorldManipulation.night;
 import xyz.necrozma.Refractor.WorldManipulation.title;
 import xyz.necrozma.Refractor.info;
 
-import java.util.Objects;
 
 public class CommandManager {
     private final JavaPlugin plugin;
+
+    Logger logger = LoggerFactory.getLogger(CommandManager.class);
 
     public CommandManager(JavaPlugin plugin) {
         this.plugin = plugin;
@@ -53,7 +56,7 @@ public class CommandManager {
             setCommandExecutor("unmute", new Unmute());
             setCommandExecutor("mute", new Mute());
 
-            plugin.getLogger().info("Successfully Loaded Commands");
+            logger.info("Successfully Loaded Commands");
         } catch (Exception e) {
             e.printStackTrace();
             Sentry.captureException(e);
@@ -64,7 +67,7 @@ public class CommandManager {
         if (command != null) {
             command.setExecutor(executor);
         } else {
-            plugin.getLogger().warning("Failed to set executor for command: " + commandName);
+            logger.warn("Failed to set executor for command: " + commandName);
         }
     }
 
