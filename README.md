@@ -16,3 +16,5 @@ A 1.20 plugin currently being developed by [`_sadan_`](https://discordapp.com/us
 
 View latest builds in the [Actions](https://github.com/TheBozzz34/Refractor/actions/workflows/maven.yml)
 
+Private Issues on [Linear](https://linear.app/refractor)
+
