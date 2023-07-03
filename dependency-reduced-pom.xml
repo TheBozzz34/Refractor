@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>xyz.necrozma</groupId>
   <artifactId>Refractor</artifactId>
-  <version>3.3.2-SNAPSHOT</version>
+  <version>4-SNAPSHOT</version>
   <build>
     <plugins>
       <plugin>
@@ -22,6 +22,10 @@
             <relocation>
               <pattern>org.bstats</pattern>
               <shadedPattern>xyz.necrozma.Refractor</shadedPattern>
+            </relocation>
+            <relocation>
+              <pattern>dev.dejvokep.boostedyaml</pattern>
+              <shadedPattern>xyz.necrozma.Refractor.libs</shadedPattern>
             </relocation>
           </relocations>
         </configuration>

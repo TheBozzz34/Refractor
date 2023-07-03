@@ -1,5 +1,12 @@
 package xyz.necrozma.Refractor;
 
+import dev.dejvokep.boostedyaml.YamlDocument;
+import dev.dejvokep.boostedyaml.dvs.versioning.BasicVersioning;
+import dev.dejvokep.boostedyaml.route.Route;
+import dev.dejvokep.boostedyaml.settings.dumper.DumperSettings;
+import dev.dejvokep.boostedyaml.settings.general.GeneralSettings;
+import dev.dejvokep.boostedyaml.settings.loader.LoaderSettings;
+import dev.dejvokep.boostedyaml.settings.updater.UpdaterSettings;
 import io.sentry.Sentry;
 import me.clip.placeholderapi.PlaceholderAPI;
 import org.bstats.bukkit.Metrics;
@@ -22,17 +29,18 @@ import xyz.necrozma.Refractor.PlayerManipulation.feed;
 import xyz.necrozma.Refractor.PlayerManipulation.getinfo;
 import xyz.necrozma.Refractor.PlayerManipulation.give;
 import xyz.necrozma.Refractor.PlayerManipulation.heal;
+import xyz.necrozma.Refractor.Utilities.Config;
 import xyz.necrozma.Refractor.Utilities.Database;
 import xyz.necrozma.Refractor.WorldManipulation.day;
 import xyz.necrozma.Refractor.WorldManipulation.night;
 import xyz.necrozma.Refractor.WorldManipulation.title;
 
 import java.io.File;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import static org.bukkit.Bukkit.getServer;
 
 
 public class Main extends JavaPlugin {
@@ -41,10 +49,7 @@ public class Main extends JavaPlugin {
     public PluginDescriptionFile pdf;
     Logger logger = LoggerFactory.getLogger(Main.class);
 
-    String jdbcDriver = this.getConfig().getString("mysql-driver");
-    String dbUrl = this.getConfig().getString("mysql-url");
-    String username = this.getConfig().getString("mysql-username");
-    String password = this.getConfig().getString("mysql-password");
+    private Config configManager;
     public static Database database;
 
 
@@ -53,42 +58,22 @@ public class Main extends JavaPlugin {
 
         plugin = this;
 
-        try {
-            if (!getDataFolder().exists()) {
-                getDataFolder().mkdirs();
-            }
-            File file = new File(getDataFolder(), "config.yml");
-            if (!file.exists()) {
-                logger.info("Config.yml not found, creating!");
-                saveDefaultConfig();
-            } else {
-                logger.info("Config.yml found, loading!");
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-            Sentry.captureException(e);
-        }
-
-        FileConfiguration config = this.getConfig();
-        config.addDefault("bstats", true);
-        config.addDefault("sentry-debug", false);
-        config.addDefault("discord-link", "Discord Server Invite URL");
-        config.addDefault("mysql-driver", "com.mysql.cj.jdbc.Driver  # DO NOT CHANGE UNLESS YOU KNOW WHAT YOU ARE DOING");
-        config.addDefault("mysql-url", "jdbc:mysql://localhost:3306/mydatabase");
-        config.addDefault("mysql-username", "your-username");
-        config.addDefault("mysql-password", "your-password");
-        config.options().copyDefaults(true);
-        saveConfig();
-
-
         pdf = this.getDescription();
+
+        Config configManager = Config.getInstance();
 
         Sentry.init(options -> {
             options.setDsn("https://438653d78f4044eabce86bfac30ec13b@o561860.ingest.sentry.io/5904137");
             options.setTracesSampleRate(1.0);
             // Set to true for init messages
-            options.setDebug(config.getBoolean("sentry-debug"));
+            options.setDebug(configManager.getBoolean(Route.from("sentry-debug")));
         });
+
+
+        String jdbcDriver = configManager.getString(Route.from("mysql-driver"));
+        String dbUrl = configManager.getString(Route.from("mysql-url"));
+        String username = configManager.getString(Route.from("mysql-username"));
+        String password = configManager.getString(Route.from("mysql-password"));
 
         Connection connection = null;
 
@@ -102,7 +87,7 @@ public class Main extends JavaPlugin {
         }
 
 
-        if (config.getBoolean("bstats")) {
+        if (configManager.getBoolean(Route.from("bstats"))) {
             int pluginId = 12406;
             Metrics metrics = new Metrics(this, pluginId);
             logger.info("Enabled Bstats");
@@ -185,7 +170,7 @@ public class Main extends JavaPlugin {
     }
 
     public void onDisable() {
-        logger.info("Shutting down database connection");
+        logger.info("Performing shutdown steps.");
         database.disconnect();
 
     }
