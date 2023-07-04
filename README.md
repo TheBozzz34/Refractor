@@ -23,5 +23,5 @@ Private Issues on [Linear](https://linear.app/refractor)
 <a href="https://jb.gg/OpenSourceSupport"><img src="https://resources.jetbrains.com/storage/products/company/brand/logos/jb_beam.svg" width="150">
 </a>
 
-[JetBrains](https://jb.gg/OpenSourceSupport), creators of the IntelliJ IDEA, for providing student licenses.
+[JetBrains]([https://jb.gg/OpenSourceSupport](https://www.jetbrains.com/community/education/#students)), creators of IntelliJ IDEA, for providing free student licenses.
 
