@@ -18,3 +18,10 @@ View latest builds in the [Actions](https://github.com/TheBozzz34/Refractor/acti
 
 Private Issues on [Linear](https://linear.app/refractor)
 
+## Special thanks
+
+<a href="https://jb.gg/OpenSourceSupport"><img src="https://resources.jetbrains.com/storage/products/company/brand/logos/jb_beam.svg" width="150">
+</a>
+
+[JetBrains](https://jb.gg/OpenSourceSupport), creators of the IntelliJ IDEA, for providing student licenses.
+
