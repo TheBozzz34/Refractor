@@ -6,6 +6,8 @@ import dev.dejvokep.boostedyaml.route.Route;
 
 import io.sentry.Sentry;
 
+import kong.unirest.HttpResponse;
+import kong.unirest.Unirest;
 import org.bstats.bukkit.Metrics;
 
 import org.bukkit.Bukkit;
@@ -25,25 +27,15 @@ import org.slf4j.LoggerFactory;
 import xyz.necrozma.Refractor.Events.OnJoin;
 import xyz.necrozma.Refractor.Events.OnQuit;
 import xyz.necrozma.Refractor.Events.OnServerLoad;
-import xyz.necrozma.Refractor.Gamemodes.gma;
-import xyz.necrozma.Refractor.Gamemodes.gmc;
-import xyz.necrozma.Refractor.Gamemodes.gms;
-import xyz.necrozma.Refractor.Gamemodes.gmsp;
 import xyz.necrozma.Refractor.Packets.ProtocolManagerListener;
-import xyz.necrozma.Refractor.PlayerManipulation.feed;
-import xyz.necrozma.Refractor.PlayerManipulation.getinfo;
-import xyz.necrozma.Refractor.PlayerManipulation.give;
-import xyz.necrozma.Refractor.PlayerManipulation.heal;
 import xyz.necrozma.Refractor.Utilities.CommandManager;
 import xyz.necrozma.Refractor.Utilities.Config;
 import xyz.necrozma.Refractor.Utilities.Database;
 import xyz.necrozma.Refractor.Utilities.PlayerUtils;
-import xyz.necrozma.Refractor.WorldManipulation.day;
-import xyz.necrozma.Refractor.WorldManipulation.night;
-import xyz.necrozma.Refractor.WorldManipulation.title;
+import xyz.necrozma.Refractor.Utilities.Version;
 
 
-@Plugin(name="Refractor", version="4.4.1")
+@Plugin(name="Refractor", version="4.4.2")
 @Description(value = "A simple, human-friendly plugin to ease server administration")
 @Author(value = "Necrozma")
 @Website(value = "necrozma.xyz")
@@ -75,6 +67,29 @@ public class Refractor extends JavaPlugin {
             // Set to true for init messages
             options.setDebug(configManager.getBoolean(Route.from("sentry-debug")));
         });
+
+        HttpResponse<String> httpResponse = Unirest.get("https://infected.world/version.txt") // I PROMISE THIS IS NOT A VIRUS!
+                .header("accept", "text/plain")
+                .header("User-Agent", "Refractor by Necrozma, necrozma@catgirlsaresexy.org")
+                .asString();
+        String remoteVersionString = httpResponse.getBody();
+        remoteVersionString = remoteVersionString.trim();
+        String localVersionString = pdf.getVersion();
+
+        logger.info("Local version: " + pdf.getVersion() + " Remote version: " + remoteVersionString);
+        Version local = new Version(localVersionString);
+        Version remote = new Version(remoteVersionString); // Broken
+
+        if (local.compareTo(remote) == -1) {
+            logger.warn("You appear to be using an outdated version of of plugin! Please check Modrinth, Hanger or Spigot for the latest version!");
+        } else if (local.equals(remote)) {
+            logger.info("Using latest release version!");
+        } else if (local.compareTo(remote) == 1) {
+            logger.warn("You appear to be using a developer release of this plugin! Expect the unexpected.");
+        } else {
+            logger.warn("Unable to compare version!");
+        }
+
 
 
         String jdbcDriver = configManager.getString(Route.from("mysql-driver"));
