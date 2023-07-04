@@ -1,7 +1,7 @@
 #########################
 # Refractor By Necrozma #
 #########################
-config-version: 2 # DO NOT TOUCH
+config-version: 3 # DO NOT TOUCH
 
 ########################
 #Miscellaneous Settings:
@@ -12,11 +12,13 @@ bstats: true
 # Server Specific Settings:
 ###########################
 discord-link: <Your Discord Server URL>
+highlight-operators: true
 
 #################
 # MySQL Settings:
 #################
-mysql-driver: com.mysql.cj.jdbc.Driver # Do Not Change This Unless You Know What You Are Doing!
+mysql-driver: com.mysql.cj.jdbc.Driver # Do not change mysql-driver unless you know what you are doing.
 mysql-url: jdbc:mysql://<Your Server Address>/<Your Database Name>
 mysql-username: <Your MySQL Username>
 mysql-password: <Your MySQL Password>
+

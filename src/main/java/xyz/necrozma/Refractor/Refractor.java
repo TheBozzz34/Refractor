@@ -30,7 +30,7 @@ import xyz.necrozma.Refractor.Utilities.Database;
 import xyz.necrozma.Refractor.Utilities.PlayerUtils;
 
 
-@Plugin(name="Refractor", version="4.2")
+@Plugin(name="Refractor", version="4.3")
 @Description(value = "A simple, human-friendly plugin to ease server administration")
 @Author(value = "Necrozma")
 @Website(value = "necrozma.xyz")

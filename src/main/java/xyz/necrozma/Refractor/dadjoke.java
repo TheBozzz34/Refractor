@@ -14,7 +14,7 @@ import org.bukkit.permissions.PermissionDefault;
 import org.bukkit.plugin.java.annotation.permission.Permission;
 
 
-@Permission(name = "refractor.joke", desc = "Allows dad joke command", defaultValue = PermissionDefault.NOT_OP)
+@Permission(name = "refractor.joke", desc = "Allows dad joke command", defaultValue = PermissionDefault.TRUE)
 @org.bukkit.plugin.java.annotation.command.Command(name = "joke", desc = "Sends a random dad joke",aliases = {"dadjoke"}, permission = "refractor.joke", permissionMessage = "You do not have permission to use this command!", usage = "/<command>")
 public class dadjoke implements CommandExecutor {
     @Override
@@ -26,11 +26,9 @@ public class dadjoke implements CommandExecutor {
         if(cmd.getName().equalsIgnoreCase("joke")) {
             HttpResponse<String> httpResponse = Unirest.get("https://icanhazdadjoke.com/")
                     .header("accept", "text/plain")
-                    .header("User-Agent", "Keurahs Java Plugin, rep@contact-us.fourleafclover.company")
+                    .header("User-Agent", "Refractor by Necrozma, necrozma@catgirlsaresexy.org")
                     .asString();
                     player.sendMessage(httpResponse.getBody());
-
-
 
         }
 

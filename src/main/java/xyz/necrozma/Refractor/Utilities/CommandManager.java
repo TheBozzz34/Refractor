@@ -6,6 +6,7 @@ import org.bukkit.command.PluginCommand;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import xyz.necrozma.Refractor.PluginManagement.Reload;
 import xyz.necrozma.Refractor.dadjoke;
 import xyz.necrozma.Refractor.dsc;
 import xyz.necrozma.Refractor.Gamemodes.gma;
@@ -55,6 +56,7 @@ public class CommandManager {
             setCommandExecutor("unban", new UnBan());
             setCommandExecutor("unmute", new Unmute());
             setCommandExecutor("mute", new Mute());
+            setCommandExecutor("reload", new Reload());
 
             logger.info("Successfully Loaded Commands");
         } catch (Exception e) {
