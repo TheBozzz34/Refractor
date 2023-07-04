@@ -10,6 +10,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.permissions.PermissionDefault;
 import org.bukkit.plugin.java.annotation.command.Commands;
 import org.bukkit.plugin.java.annotation.permission.Permission;
+import org.jetbrains.annotations.NotNull;
 
 //TODO: Fix no arguments error
 
@@ -17,7 +18,7 @@ import org.bukkit.plugin.java.annotation.permission.Permission;
 @Commands(@org.bukkit.plugin.java.annotation.command.Command(name = "title", desc = "Sends a title to a player", permission = "refractor.title", permissionMessage = "You do not have permission to use this command!", usage = "/<command> [message] [subtitle]"))
 public class title implements CommandExecutor {
     @Override
-    public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
+    public boolean onCommand(@NotNull CommandSender sender, @NotNull Command cmd, @NotNull String label, String[] args) {
         if (!(sender instanceof Player)) { return true; }
         Player player = (Player) sender;
         Player target = player.getServer().getPlayer(args[0]);
@@ -29,13 +30,10 @@ public class title implements CommandExecutor {
                 target.sendTitle(MESSAGE, SUBTITLE, 1, 20, 1);
                 player.sendMessage("Successfully sent title to " + target.getDisplayName());
             } catch (Exception e) {
-                //e.printStackTrace();
                 player.sendMessage(ChatColor.RED + "You need to specify a Header and Subtitle!");
                 Sentry.captureException(e);
             }
-
         }
         return true;
     }
-
 }

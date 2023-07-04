@@ -22,9 +22,7 @@ public class Reload implements CommandExecutor {
         if (command.getName().equalsIgnoreCase("reload")) {
             logger.info("Reloading config");
             commandSender.sendMessage(ChatColor.YELLOW + "Reloading config!");
-
             configManager.Reload();
-
         }
         return true;
     }

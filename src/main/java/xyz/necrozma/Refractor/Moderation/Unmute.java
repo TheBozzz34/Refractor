@@ -36,13 +36,12 @@ public class Unmute implements CommandExecutor {
                 return true;
             }
             String UUID = playerUtils.UUIDFromStringName(args[0], commandSender);
-            Boolean success = deletePlayerMuteData(UUID);
+            boolean success = deletePlayerMuteData(UUID);
             if (success) {
                 commandSender.sendMessage(ChatColor.GREEN + "Unmuted player!");
             } else {
                 commandSender.sendMessage(ChatColor.RED + "Unable to unmute player!");
             }
-
 
         }
         return true;
@@ -65,7 +64,6 @@ public class Unmute implements CommandExecutor {
             logger.error("Failed to delete player data. Error: " + e.getMessage());
             Sentry.captureException(e);
         }
-
         return success;
     }
 }

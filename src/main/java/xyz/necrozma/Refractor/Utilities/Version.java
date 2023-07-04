@@ -1,13 +1,12 @@
 package xyz.necrozma.Refractor.Utilities;
 
+import org.jetbrains.annotations.NotNull;
+
 public class Version implements Comparable<Version> {
-
-    private String version;
-
+    private final String version;
     public final String get() {
         return this.version;
     }
-
     public Version(String version) {
         if(version == null)
             throw new IllegalArgumentException("Version can not be null");
@@ -15,10 +14,7 @@ public class Version implements Comparable<Version> {
             throw new IllegalArgumentException("Invalid version format");
         this.version = version;
     }
-
-    @Override public int compareTo(Version that) {
-        if(that == null)
-            return 1;
+    @Override public int compareTo(@NotNull Version that) {
         String[] thisParts = this.get().split("\\.");
         String[] thatParts = that.get().split("\\.");
         int length = Math.max(thisParts.length, thatParts.length);
@@ -34,7 +30,6 @@ public class Version implements Comparable<Version> {
         }
         return 0;
     }
-
     @Override public boolean equals(Object that) {
         if(this == that)
             return true;
@@ -44,5 +39,4 @@ public class Version implements Comparable<Version> {
             return false;
         return this.compareTo((Version) that) == 0;
     }
-
 }

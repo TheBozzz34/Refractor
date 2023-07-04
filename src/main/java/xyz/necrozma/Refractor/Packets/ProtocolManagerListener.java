@@ -18,10 +18,8 @@ import xyz.necrozma.Refractor.Utilities.Config;
 import static xyz.necrozma.Refractor.Refractor.database;
 
 public class ProtocolManagerListener {
-
     static Logger logger = LoggerFactory.getLogger(ProtocolManagerListener.class);
     static Config configManager = Config.getInstance();
-
     public static void initialize(Plugin plugin) {
         ProtocolManager manager = ProtocolLibrary.getProtocolManager();
         manager.addPacketListener(new PacketAdapter(plugin, ListenerPriority.NORMAL, PacketType.Play.Client.CHAT) {
@@ -50,7 +48,6 @@ public class ProtocolManagerListener {
             }
         });
     }
-
     private static boolean isMuted(String UUID) {
         return database.isPlayerMuted(UUID);
     }

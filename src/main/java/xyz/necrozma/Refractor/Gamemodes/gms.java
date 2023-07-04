@@ -19,7 +19,6 @@ public class gms implements CommandExecutor {
         if (!(sender instanceof Player)) { return true; }
         Player player = (Player) sender;
 
-
         if(cmd.getName().equalsIgnoreCase("gms")) {
             if (args.length == 0) {
                 player.setGameMode(GameMode.SURVIVAL);
@@ -35,9 +34,7 @@ public class gms implements CommandExecutor {
             }
         }
 
-
         return true;
     }
-
 
 }

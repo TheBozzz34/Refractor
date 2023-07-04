@@ -11,7 +11,6 @@ import java.io.File;
 
 import static xyz.necrozma.Refractor.Refractor.plugin;
 
-
 public class OnServerLoad implements Listener {
     Logger logger = LoggerFactory.getLogger(OnServerLoad.class);
     @EventHandler

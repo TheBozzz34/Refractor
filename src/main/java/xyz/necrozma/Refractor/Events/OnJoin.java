@@ -11,10 +11,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import static xyz.necrozma.Refractor.Refractor.database;
-
 public class OnJoin implements Listener {
     Logger logger = LoggerFactory.getLogger(OnJoin.class);
-
     @EventHandler
     // EventHandler to recognize the event.
     public void onPlayerJoin(PlayerJoinEvent event){
@@ -34,6 +32,3 @@ public class OnJoin implements Listener {
     }
 
 }
-
-
-

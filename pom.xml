@@ -44,7 +44,6 @@
         </repository>
     </repositories>
 
-
     <dependencies>
         <!--Spigot-->
         <dependency>
@@ -119,7 +118,7 @@
         </dependency>
     </dependencies>
 
-<!--Build the jar-->
+    <!--Build the jar-->
     <build>
         <plugins>
             <plugin>

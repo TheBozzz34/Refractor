@@ -54,14 +54,9 @@ public class Ban implements CommandExecutor {
             if(target != null) {
                 target.kickPlayer(ChatColor.RED + "You have been banned for " + ban_reason);
             }
-            // player.sendMessage(ChatColor.RED + "Banning UUID: " + target_uuid_string + " For: " + ban_reason);
-
-
         }
-
         return true;
     }
-
     public void savePlayerBanData(String playerUUID, String reason, Player player) {
         Connection connection = null;
 
@@ -116,4 +111,3 @@ public class Ban implements CommandExecutor {
     }
 
 }
-

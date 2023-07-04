@@ -34,9 +34,7 @@ public class gmsp implements CommandExecutor {
             }
         }
 
-
         return true;
     }
-
 
 }

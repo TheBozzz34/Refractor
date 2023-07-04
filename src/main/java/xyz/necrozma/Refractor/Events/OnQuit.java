@@ -8,7 +8,6 @@ import org.bukkit.event.player.PlayerQuitEvent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-
 public class OnQuit implements Listener {
     Logger logger = LoggerFactory.getLogger(OnQuit.class);
     @EventHandler

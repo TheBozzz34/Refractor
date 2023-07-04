@@ -25,6 +25,4 @@ public class info implements CommandExecutor {
         }
         return true;
     }
-
-
 }

@@ -35,9 +35,7 @@ public class gma implements CommandExecutor {
             }
         }
 
-
         return true;
     }
-
 
 }

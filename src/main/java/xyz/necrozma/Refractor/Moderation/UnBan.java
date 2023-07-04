@@ -36,7 +36,6 @@ public class UnBan implements CommandExecutor {
                 return true;
             }
 
-
             String UUID = playerUtils.UUIDFromStringName(args[0], commandSender);
             logger.info("Unbanning UUID: " + UUID);
             boolean success = deletePlayerBanData(UUID);
@@ -45,7 +44,6 @@ public class UnBan implements CommandExecutor {
             } else {
                 commandSender.sendMessage(ChatColor.YELLOW + "Player ban data not found or failed to delete.");
             }
-
 
         }
         return true;

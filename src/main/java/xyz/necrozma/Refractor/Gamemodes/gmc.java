@@ -21,7 +21,6 @@ public class gmc implements CommandExecutor {
         }
         Player player = (Player) sender;
 
-
         if (cmd.getName().equalsIgnoreCase("gmc")) {
             if (args.length == 0) {
                 player.setGameMode(GameMode.CREATIVE);
@@ -36,7 +35,6 @@ public class gmc implements CommandExecutor {
                 player.sendMessage("That does not appear to be valid player!");
             }
         }
-
 
         return true;
     }
