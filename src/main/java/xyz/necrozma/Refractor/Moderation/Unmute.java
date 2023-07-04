@@ -6,6 +6,7 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.permissions.PermissionDefault;
+import org.bukkit.plugin.java.annotation.command.Commands;
 import org.bukkit.plugin.java.annotation.permission.Permission;
 import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
@@ -19,7 +20,7 @@ import static xyz.necrozma.Refractor.Refractor.database;
 import static  xyz.necrozma.Refractor.Refractor.playerUtils;
 
 @Permission(name = "refractor.unmute", desc = "Allows unmute command", defaultValue = PermissionDefault.OP)
-@org.bukkit.plugin.java.annotation.command.Command(name = "unmute", desc = "Unmutes a player", permission = "refractor.unmute", permissionMessage = "You do not have permission to use this command!", usage = "/<command> [target player]")
+@Commands(@org.bukkit.plugin.java.annotation.command.Command(name = "unmute", desc = "Unmutes a player", permission = "refractor.unmute", permissionMessage = "You do not have permission to use this command!", usage = "/<command> [target player]"))
 public class Unmute implements CommandExecutor {
     Logger logger = LoggerFactory.getLogger(Unmute.class);
     @Override

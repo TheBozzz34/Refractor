@@ -6,6 +6,7 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.permissions.PermissionDefault;
+import org.bukkit.plugin.java.annotation.command.Commands;
 import org.bukkit.plugin.java.annotation.permission.Permission;
 import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
@@ -20,7 +21,7 @@ import static xyz.necrozma.Refractor.Refractor.database;
 import static  xyz.necrozma.Refractor.Refractor.playerUtils;
 
 @Permission(name = "refractor.mute", desc = "Allows mute command", defaultValue = PermissionDefault.OP)
-@org.bukkit.plugin.java.annotation.command.Command(name = "mute", desc = "Mutes a player", permission = "refractor.mute", permissionMessage = "You do not have permission to use this command!", usage = "/<command> [target player] (reason)")
+@Commands(@org.bukkit.plugin.java.annotation.command.Command(name = "mute", desc = "Mutes a player", permission = "refractor.mute", permissionMessage = "You do not have permission to use this command!", usage = "/<command> [target player] (reason)"))
 public class Mute implements CommandExecutor {
 
     Logger logger = LoggerFactory.getLogger(Ban.class);

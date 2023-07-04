@@ -8,12 +8,13 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.permissions.PermissionDefault;
+import org.bukkit.plugin.java.annotation.command.Commands;
 import org.bukkit.plugin.java.annotation.permission.Permission;
 
 //TODO: Fix no arguments error
 
 @Permission(name = "refractor.title", desc = "Allows title command", defaultValue = PermissionDefault.OP)
-@org.bukkit.plugin.java.annotation.command.Command(name = "title", desc = "Sends a title to a player", permission = "refractor.title", permissionMessage = "You do not have permission to use this command!", usage = "/<command> [message] [subtitle]")
+@Commands(@org.bukkit.plugin.java.annotation.command.Command(name = "title", desc = "Sends a title to a player", permission = "refractor.title", permissionMessage = "You do not have permission to use this command!", usage = "/<command> [message] [subtitle]"))
 public class title implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {

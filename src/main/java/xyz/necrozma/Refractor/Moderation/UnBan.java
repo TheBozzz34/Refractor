@@ -6,6 +6,7 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.permissions.PermissionDefault;
+import org.bukkit.plugin.java.annotation.command.Commands;
 import org.bukkit.plugin.java.annotation.permission.Permission;
 import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
@@ -19,7 +20,7 @@ import static xyz.necrozma.Refractor.Refractor.database;
 import static  xyz.necrozma.Refractor.Refractor.playerUtils;
 
 @Permission(name = "refractor.unban", desc = "Allows unban command", defaultValue = PermissionDefault.OP)
-@org.bukkit.plugin.java.annotation.command.Command(name = "unban", desc = "Unbans a player", permission = "refractor.unban", permissionMessage = "You do not have permission to use this command!", usage = "/<command> [target player]")
+@Commands(@org.bukkit.plugin.java.annotation.command.Command(name = "unban", desc = "Unbans a player", permission = "refractor.unban", permissionMessage = "You do not have permission to use this command!", usage = "/<command> [target player]"))
 public class UnBan implements CommandExecutor {
     Logger logger = LoggerFactory.getLogger(UnBan.class);
     @Override

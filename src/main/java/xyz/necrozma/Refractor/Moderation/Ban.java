@@ -8,6 +8,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.permissions.PermissionDefault;
+import org.bukkit.plugin.java.annotation.command.Commands;
 import org.bukkit.plugin.java.annotation.permission.Permission;
 import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
@@ -23,7 +24,7 @@ import java.sql.SQLException;
 import static xyz.necrozma.Refractor.Refractor.database;
 import static  xyz.necrozma.Refractor.Refractor.playerUtils;
 @Permission(name = "refractor.ban", desc = "Allows ban command", defaultValue = PermissionDefault.OP)
-@org.bukkit.plugin.java.annotation.command.Command(name = "ban", desc = "Bans a player", permission = "refractor.ban", permissionMessage = "You do not have permission to use this command!", usage = "/<command> [target player] (reason)")
+@Commands(@org.bukkit.plugin.java.annotation.command.Command(name = "ban", desc = "Bans a player", permission = "refractor.ban", permissionMessage = "You do not have permission to use this command!", usage = "/<command> [target player] (reason)"))
 public class Ban implements CommandExecutor {
     Logger logger = LoggerFactory.getLogger(Ban.class);
 

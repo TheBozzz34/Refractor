@@ -5,6 +5,7 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.permissions.PermissionDefault;
+import org.bukkit.plugin.java.annotation.command.Commands;
 import org.bukkit.plugin.java.annotation.permission.Permission;
 import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
@@ -12,7 +13,7 @@ import org.slf4j.LoggerFactory;
 import xyz.necrozma.Refractor.Utilities.Config;
 
 @Permission(name = "refractor.reload", desc = "Allows reload command", defaultValue = PermissionDefault.OP)
-@org.bukkit.plugin.java.annotation.command.Command(name = "reload", desc = "Reloads the config file", permission = "refractor.reload", permissionMessage = "You do not have permission to use this command!", usage = "/<command>")
+@Commands(@org.bukkit.plugin.java.annotation.command.Command(name = "reload", desc = "Reloads the config file", permission = "refractor.reload", permissionMessage = "You do not have permission to use this command!", usage = "/<command>"))
 public class Reload implements CommandExecutor {
     Config configManager = Config.getInstance();
     Logger logger = LoggerFactory.getLogger(Reload.class);

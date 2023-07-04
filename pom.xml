@@ -6,7 +6,7 @@
 
     <groupId>xyz.necrozma</groupId>
     <artifactId>Refractor</artifactId>
-    <version>4.3-SNAPSHOT</version>
+    <version>4.4.1-SNAPSHOT</version>
 
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
@@ -102,8 +102,7 @@
         <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>plugin-annotations</artifactId>
-            <version>1.2.0-SNAPSHOT</version>
-            <scope>provided</scope>
+            <version>1.2.3-SNAPSHOT</version>
         </dependency>
         <!--Boosted YAML -->
         <dependency>
