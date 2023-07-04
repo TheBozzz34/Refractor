@@ -11,7 +11,7 @@
 A 1.20 plugin currently being developed by [`_sadan_`](https://discordapp.com/users/457659194535837727), requires PlaceholderAPI and ProtocolLib.
 
 
-### [Now on Modrinth!](https://modrinth.com/plugin/refractor)
+### Now on [Modrinth](https://modrinth.com/plugin/refractor), [Hangar](https://hangar.papermc.io/necrozma/Refractor) and [Spigot](https://www.spigotmc.org/resources/refractor.96459/)!
 
 
 View latest builds in the [Actions](https://github.com/TheBozzz34/Refractor/actions/workflows/maven.yml)
